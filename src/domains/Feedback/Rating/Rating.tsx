@@ -24,7 +24,7 @@ export default function RatingWidget({
     onFailure,
     townhallId,
 }: Props & DefaultProps) {
-    const [value, setValue] = useState<number | null>(null);
+    const [value, setValue] = useState<number | null>(0);
     const apiRequest = React.useCallback(
         () => rateTownhall(townhallId, value),
         [townhallId, value]
@@ -60,7 +60,7 @@ export default function RatingWidget({
                     <Button
                         variant='contained'
                         onClick={handleSubmit}
-                        disabled={isLoading}
+                        disabled={isLoading || !value}
                     >
                         Submit
                     </Button>
