@@ -130,3 +130,11 @@ export async function deleteBugReport(_id: string) {
     const body = { _id };
     return axios.post('/api/bugs/delete-report', body);
 }
+
+export async function rateTownhall(townhallId: string, value: number | null) {
+    if (!townhallId || !value) {
+        throw errors.internalError();
+    }
+    const body = { townhallId, value };
+    return axios.post('/api/rating/rate-townhall', body);
+}
