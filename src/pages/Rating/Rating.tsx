@@ -41,7 +41,7 @@ export default function RatingPage() {
                 Rating
             </Grid>
             <RatingWidget
-                questions={[{ question: 'How did you like this townhall?', id: '0' }]}
+                questions={[{ question: 'How did you like this townhall?' }]}
                 townhallId={townhall._id}
                 onSuccess={() => {
                     history.push('/app/home');
