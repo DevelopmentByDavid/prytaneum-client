@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Main from 'layout/Main';
 import UserProvider from 'contexts/User';
@@ -19,17 +19,32 @@ export default {
 };
 
 interface Props {
-    questions: Array<Question>
+    questions: Array<string>
 }
 
 export function Basic({questions}: Props) {
     const townhall = makeTownhall();
+    const [questionArr, setQuestionArr] = useState<Array<Question>>([]);
+
+    const buildQuestions = () => {
+        const questionArray: Array<Question> = [];
+        for (let i = 0; i < questions.length; i += 1) {
+            questionArray.push({ question: questions[i] });
+        }
+        return questionArray;
+    };
+
+    useEffect(() => {
+        const result = buildQuestions();
+        setQuestionArr(result);
+    }, [questions]);
+
     return (
         <Main>
             <UserProvider>
                 <TownhallProvider value={townhall} townhallId='123'>
                     <Component
-                        questions={questions}
+                        questions={questionArr}
                         townhallId={townhall._id}
                         onSuccess={() => {}}
                         onFailure={() => {}}
@@ -42,9 +57,9 @@ export function Basic({questions}: Props) {
 
 Basic.args = {
     questions: [
-        { question: 'Please rate your experience' }, 
-        { question: 'audio' }, 
-        { question: 'video' }, 
-        { question: 'chat' }
+        'Please rate your experience', 
+        'audio', 
+        'video', 
+        'chat'
     ]
 };
