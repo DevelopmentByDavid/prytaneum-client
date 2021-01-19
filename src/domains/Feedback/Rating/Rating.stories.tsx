@@ -1,36 +1,50 @@
 import React from 'react';
 
 import Main from 'layout/Main';
-import Component from '.';
+import UserProvider from 'contexts/User';
+import TownhallProvider from 'contexts/Townhall';
+import { makeTownhall } from 'prytaneum-typings';
 
-export default { 
+import Component from '.';
+import { Question } from './Rating';
+
+export default {
     title: 'Domains/Feedback/Rating',
     component: Component,
     argTypes: {
-        question: {
-            control: { type: 'text' }
-        }
-    }
+        questions: {
+            control: { type: 'array' },
+        },
+    },
 };
 
 interface Props {
-    question: string
+    questions: Array<Question>
 }
 
-// TODO add mock api
-export function Basic({question}: Props) {
+export function Basic({questions}: Props) {
+    const townhall = makeTownhall();
     return (
         <Main>
-            <Component
-                question={question}
-                townhallId=''
-                onSuccess={() => {}}
-                onFailure={() => {}}
-            />
+            <UserProvider>
+                <TownhallProvider value={townhall} townhallId='123'>
+                    <Component
+                        questions={questions}
+                        townhallId={townhall._id}
+                        onSuccess={() => {}}
+                        onFailure={() => {}}
+                    />
+                </TownhallProvider>
+            </UserProvider>
         </Main>
     );
 }
 
 Basic.args = {
-    question: 'Please rate your experience'
+    questions: [
+        { question: 'Please rate your experience' }, 
+        { question: 'audio' }, 
+        { question: 'video' }, 
+        { question: 'chat' }
+    ]
 };

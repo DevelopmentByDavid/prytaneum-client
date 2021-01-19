@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Typography, Grid, Button } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Typography, Grid, Button, TextField } from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -11,23 +11,29 @@ interface DefaultProps {
     townhallId: string;
 }
 
-interface Props {
+export interface Question {
     question: string;
+    value?: number | null;
+}
+
+interface Props {
+    questions: Array<Question>;
     onSuccess: () => void;
     onFailure: () => void;
     townhallId?: string;
 }
 
 export default function RatingWidget({
-    question,
+    questions,
     onSuccess,
     onFailure,
     townhallId,
 }: Props & DefaultProps) {
-    const [value, setValue] = useState<number | null>(0);
+    const [values, setValues] = useState<Array<Question>>(questions);
+    const [feedback, setFeedback] = useState<string>('');
     const apiRequest = React.useCallback(
-        () => rateTownhall(townhallId, value),
-        [townhallId, value]
+        () => rateTownhall(townhallId, values, feedback),
+        [townhallId, values]
     );
 
     const [sendRequest, isLoading] = useEndpoint(apiRequest, {
@@ -41,18 +47,45 @@ export default function RatingWidget({
 
     return (
         <Grid container justify='center' xs='auto' item>
-            <Grid container justify='center' item component={Typography}>
-                {question}
-            </Grid>
-            <Grid container justify='center' item>
-                <Rating
-                    name='simple-controlled'
-                    value={value}
-                    onChange={(event, newValue) => {
-                        setValue(newValue);
-                    }}
-                />
-            </Grid>
+            {questions.map((item, index) => { 
+                return (
+                    <Grid container justify='center' xs='auto' item key={index}>
+                        <Grid
+                            container
+                            justify='center'
+                            item
+                            component={Typography}
+                        >
+                            {item.question}
+                        </Grid>
+                        <Rating
+                            name={item.question}
+                            value={item.value}
+                            onChange={(event, newValue) => {
+                                const updatedValues = [...values];
+                                updatedValues[index] = {
+                                    ...item,
+                                    value: newValue,
+                                };
+                                setValues(updatedValues);
+                            }}
+                        />
+                    </Grid>
+                );
+            }
+            )}
+            <TextField
+                id='feedback'
+                label='Feedback'
+                style={{ margin: 8 }}
+                placeholder='Feedback'
+                fullWidth
+                margin='normal'
+                InputLabelProps={{
+                    shrink: true,
+                }}
+                onChange={(e) => setFeedback(e.target.value)}
+            />
             <Grid container justify='center' item>
                 {isLoading ? (
                     <CircularProgress />
@@ -60,7 +93,7 @@ export default function RatingWidget({
                     <Button
                         variant='contained'
                         onClick={handleSubmit}
-                        disabled={isLoading || !value}
+                        disabled={isLoading || !feedback}
                     >
                         Submit
                     </Button>
