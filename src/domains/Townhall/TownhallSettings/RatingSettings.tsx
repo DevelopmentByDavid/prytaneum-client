@@ -28,7 +28,6 @@ export default React.memo(function ChatSettings({
         <SettingsList>
             <SettingsItem helpText={text.rating.enabled} name='Enabled'>
                 <Switch
-                    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
                     checked={value.enabled}
                     onChange={handleChange('enabled')}
                 />
