@@ -1,4 +1,20 @@
 /** @type {import("snowpack").SnowpackUserConfig } */
+
+// snowpack.config.js
+const httpProxy = require('http-proxy');
+const proxy = httpProxy.createServer({ target: 'http://localhost:3001', ws: true, changOrigin: true });
+
+// Listen for the `error` event on `proxy`.
+// if I don't have this here, proxy crashes
+// the app on connection reset with websockets
+proxy.on('error', function (err, req, res) {
+    res.writeHead(500, {
+        'Content-Type': 'text/plain',
+    });
+
+    res.end('Something went wrong. And we are reporting a custom error message.');
+});
+
 module.exports = {
     mount: {
         /* ... */
@@ -14,6 +30,8 @@ module.exports = {
     exclude: ['**/node_modules/**/*', '**/*.+(test|stories).*'],
     routes: [
         /* Enable an SPA Fallback in development: */
+        { src: '/api/.*', dest: (req, res) => proxy.web(req, res) },
+        { src: '/socket.io/.*', dest: (req, res) => proxy.web(req, res) },
         { match: 'routes', src: '.*', dest: '/index.html' },
     ],
     optimize: {

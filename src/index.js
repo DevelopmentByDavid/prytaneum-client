@@ -6,7 +6,7 @@ import smoothscroll from 'smoothscroll-polyfill';
 import { init } from 'utils/storage';
 import './index.css';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+// import * as serviceWorker from './serviceWorker';
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ function startup() {
     ReactDOM.render(React.createElement(App), document.getElementById('root'));
 }
 
-if (import.meta.env.MODE === 'development') {
+if (import.meta.env.MODE === 'development' && import.meta.env.SNOWPACK_PUBLIC_MSW === 'true') {
     import('mock/browser')
         .then(({ worker }) => worker.start())
         .then(startup)
@@ -35,7 +35,7 @@ if (import.meta.env.MODE === 'development') {
 
     // serviceWorker.unregister();
 
-    serviceWorker.register();
+    // serviceWorker.register();
     startup();
 }
 
