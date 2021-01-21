@@ -59,28 +59,55 @@ export default function TownhallSettings() {
         }
     );
 
+    const postTownhallSubSections = React.useMemo(() => [
+        {
+            title: 'Rating',
+            component: (
+                <RatingSettings
+                    onChange={handleChange('rating')}
+                    value={state.rating}
+                />
+            ),
+        },
+    ], [handleChange, state]);
+
     const componentSubSections = React.useMemo(
         () => [
             {
                 title: 'Chat',
-                component: (
-                    <ChatSettings
-                        onChange={handleChange('chat')}
-                        value={state.chat}
-                    />
-                ),
+                component: <ChatSettings onChange={handleChange('chat')} value={state.chat} />,
             },
             {
                 title: 'Question Queue',
                 component: (
-                    <QuestionFeedSettings
-                        onChange={handleChange('questionQueue')}
-                        value={state.questionQueue}
-                    />
+                    <QuestionFeedSettings onChange={handleChange('questionQueue')} value={state.questionQueue} />
+                ),
+            },
+            {
+                title: 'Post Townhall',
+                description: 'Turn on and off optional post townhall settings',
+                component: (
+                    <Grid container spacing={2}>
+                        {postTownhallSubSections.map(({ title, component }, idx) => (
+                            <React.Fragment key={title}>
+                                <Grid item xs={12}>
+                                    <Typography variant='overline'>{title}</Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    {component}
+                                </Grid>
+                                {idx !== postTownhallSubSections.length - 1 && (
+                                    <Grid item xs={12}>
+                                        <Divider />
+                                    </Grid>
+                                )}
+                            </React.Fragment>
+                        ))}
+                    </Grid>
                 ),
             },
         ],
-        [handleChange, state]
+        [handleChange, state, postTownhallSubSections]
     );
 
     const inviteSubSections = React.useMemo(
@@ -108,18 +135,6 @@ export default function TownhallSettings() {
         ],
         [townhall._id]
     );
-
-    const postTownhallSubSections = React.useMemo(() => [
-        {
-            title: 'Rating',
-            component: (
-                <RatingSettings
-                    onChange={handleChange('rating')}
-                    value={state.rating}
-                />
-            ),
-        },
-    ], [handleChange, state]);
 
     const config: AccordionData[] = React.useMemo(
         () => [
@@ -219,36 +234,8 @@ export default function TownhallSettings() {
                 description: 'View townhall as different types of users',
                 component: <PreviewSettings />,
             },
-            {
-                title: 'Post Townhall',
-                description: 'Turn on and off optional post townhall settings',
-                component: (
-                    <Grid container spacing={2}>
-                        {postTownhallSubSections.map(
-                            ({ title, component }, idx) => (
-                                <React.Fragment key={title}>
-                                    <Grid item xs={12}>
-                                        <Typography variant='overline'>
-                                            {title}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        {component}
-                                    </Grid>
-                                    {idx !==
-                                        postTownhallSubSections.length - 1 && (
-                                        <Grid item xs={12}>
-                                            <Divider />
-                                        </Grid>
-                                    )}
-                                </React.Fragment>
-                            )
-                        )}
-                    </Grid>
-                ),
-            },
         ],
-        [componentSubSections, inviteSubSections, postTownhallSubSections, state, handleChange]
+        [componentSubSections, inviteSubSections, state, handleChange]
     );
 
     return (
