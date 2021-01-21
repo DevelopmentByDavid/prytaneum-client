@@ -19,7 +19,7 @@ export default {
 };
 
 interface Props {
-    questions: Array<string>
+    questions: Array<string>;
 }
 
 export function Basic({questions}: Props) {
@@ -37,7 +37,7 @@ export function Basic({questions}: Props) {
     useEffect(() => {
         const result = buildQuestions();
         setQuestionArr(result);
-    }, [questions]);
+    }, []);
 
     return (
         <Main>
