@@ -120,6 +120,7 @@
         "jsdoc-mermaid": "^1.0.0",
         "msw": "^0.21.3",
         "prytaneum-typings": "https://github.com/c2c-project/prytaneum-typings#v1.0.0-alpha.82",
+        "react-is": "16.8.0",
         "snowpack": "^3.0.11",
         "storybook-addon-performance": "^0.14.0",
         "typescript": "^4.1.3",
