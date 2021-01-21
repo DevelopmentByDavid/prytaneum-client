@@ -1,9 +1,10 @@
 const path = require('path');
+const snowpackConfig = require('../snowpack.config.js');
+const webpack = require('webpack');
 
 module.exports = {
     stories: ['../src/**/*.stories.@(jsx|tsx|mdx)'],
     addons: [
-        '@storybook/preset-create-react-app',
         '@storybook/addon-a11y',
         {
             name: '@storybook/addon-essentials',
@@ -11,6 +12,7 @@ module.exports = {
                 docs: false,
             },
         },
+        '@storybook/addon-links',
         'storybook-addon-performance/register',
     ],
     typescript: {
@@ -18,8 +20,29 @@ module.exports = {
     },
     webpackFinal: (config) => {
         config.resolve.alias = {
+            ...config.resolve.alias,
+            ...Object.entries(snowpackConfig.alias).reduce(
+                (accum, [key, value]) => ({
+                    ...accum,
+                    [key]: path.resolve(__dirname, `.${value}`),
+                }),
+                {}
+            ),
             'hooks/useSocketio': path.resolve(__dirname, '../src/hooks/__mocks__/useSocketio'),
         };
+        config.module.rules.push({
+            test: /\.[tj]sx?$/,
+            loader: [
+                // This assumes snowpack@>=2.9.0
+                require.resolve('@open-wc/webpack-import-meta-loader'),
+                require.resolve('@snowpack/plugin-webpack/plugins/proxy-import-resolve'),
+            ],
+        });
+        config.plugins.push(
+            new webpack.DefinePlugin({
+                __SNOWPACK_ENV__: JSON.stringify(process.env),
+            })
+        );
         return config;
     },
     babel: async (options) => {
