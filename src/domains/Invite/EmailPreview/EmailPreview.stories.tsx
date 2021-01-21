@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import faker from 'faker/locale/en';
-import jwt from 'jsonwebtoken';
+import faker from 'faker';
+// import jwt from 'jsonwebtoken';
 
 import { DeviceContext } from 'contexts/Device';
 
@@ -30,15 +30,7 @@ interface Props extends EmailPreviewProps {
     DeviceType: 'desktop' | 'mobile';
 }
 
-export function Basic({
-    DeviceType,
-    fName,
-    MoC,
-    topic,
-    eventDateTime,
-    constituentScope,
-    registrationLink,
-}: Props) {
+export function Basic({ DeviceType, fName, MoC, topic, eventDateTime, constituentScope, registrationLink }: Props) {
     return (
         <DeviceContext.Provider value={DeviceType}>
             <Component
@@ -60,8 +52,5 @@ Basic.args = {
     topic: 'Technology',
     eventDateTime: faker.date.future().toUTCString(),
     constituentScope: 'state',
-    registrationLink: `https://prytaneum.io/invite/${jwt.sign(
-        { email: faker.internet.email(), townhallId: 'test' },
-        'secret'
-    )}`,
+    registrationLink: 'https://prytaneum.io/invite/',
 };

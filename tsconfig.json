@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "esnext",
         "lib": ["DOM", "dom.iterable", "esnext"],
-        "allowJs": true,
         "skipLibCheck": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
@@ -17,16 +16,13 @@
         "baseUrl": "src"
     },
     "include": ["src"],
-    "exclude": ["node_modules"],
+    "exclude": ["node_modules", "**/*.test.*", "**/*.stories.*", "**/__mocks__/**", "**/serviceWorker.ts"],
     "typedocOptions": {
         "mode": "modules",
         "out": "docs",
         "excludeNotExported": true,
-        "exclude": [
-            "**/*.test.ts",
-            "**/*.stories.*",
-            "**/*+(index|.spec|.e2e).ts"
-        ],
+        "exclude": ["**/*.test.ts", "**/*.stories.*", "**/*+(index|.spec|.e2e).ts"],
         "categoryOrder": ["components", "hooks", "*"]
-    }
+    },
+    "compileOnSave": true
 }

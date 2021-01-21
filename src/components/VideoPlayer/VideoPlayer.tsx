@@ -32,7 +32,7 @@ function VideoPlayer({ url, rest }: ReactPlayerProps) {
             <div className={classes.innerContainer}>
                 <ReactPlayer
                     url={url}
-                    playing={process.env.NODE_ENV === 'production'}
+                    playing={import.meta.env.MODE === 'production'}
                     width='100%'
                     height='100%'
                     playsinline

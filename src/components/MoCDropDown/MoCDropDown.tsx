@@ -47,7 +47,7 @@ export default function MoCDropdown() {
         axios
             .get(url, {
                 headers: {
-                    'X-API-Key': process.env.REACT_APP_PROPUBLICA_API_KEY, // FIXME: should be a request to our server rather than a process.env
+                    'X-API-Key': import.meta.env.REACT_APP_PROPUBLICA_API_KEY, // FIXME: should be a request to our server rather than a import.meta.env
                 },
             })
             .then((response) => {

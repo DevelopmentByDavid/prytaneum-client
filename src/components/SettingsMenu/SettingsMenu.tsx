@@ -13,7 +13,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import { motion } from 'framer-motion';
-import { PopmotionTransitionProps } from 'framer-motion/types/types';
+import { Transition } from 'framer-motion';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,7 +54,7 @@ interface Props {
     title: string;
 }
 
-const transition: PopmotionTransitionProps = {
+const transition: Transition = {
     // type: 'spring',
     // damping: 13,
     // stiffness: 150,
@@ -92,35 +92,17 @@ export default function SettingsMenu({ config, title }: Props) {
         setAnchorEl(currentTarget);
     };
 
-    function getDetails(
-        component: JSX.Element | ((b: boolean) => JSX.Element),
-        sectionTitle: string
-    ) {
-        return typeof component === 'function'
-            ? component(expanded.has(sectionTitle))
-            : component;
+    function getDetails(component: JSX.Element | ((b: boolean) => JSX.Element), sectionTitle: string) {
+        return typeof component === 'function' ? component(expanded.has(sectionTitle)) : component;
     }
 
     return (
         <div className={classes.root}>
-            <Menu
-                open={Boolean(anchorEl)}
-                anchorEl={anchorEl}
-                onClose={() => setAnchorEl(null)}
-            >
-                <MenuItem onClick={toggleExpandAll}>
-                    {`${expanded.size > 1 ? 'Hide' : 'Expand'} All`}
-                </MenuItem>
+            <Menu open={Boolean(anchorEl)} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+                <MenuItem onClick={toggleExpandAll}>{`${expanded.size > 1 ? 'Hide' : 'Expand'} All`}</MenuItem>
             </Menu>
             <Grid container>
-                <Grid
-                    item
-                    xs={12}
-                    container
-                    justify='space-between'
-                    alignItems='center'
-                    className={classes.titlebar}
-                >
+                <Grid item xs={12} container justify='space-between' alignItems='center' className={classes.titlebar}>
                     <motion.div
                         initial={{ x: -50 }}
                         animate={{ x: 0 }}
@@ -138,11 +120,7 @@ export default function SettingsMenu({ config, title }: Props) {
                         exit={{ y: 50, opacity: 0 }}
                         transition={transition}
                     >
-                        <IconButton
-                            onClick={handleClick}
-                            color='inherit'
-                            edge='end'
-                        >
+                        <IconButton onClick={handleClick} color='inherit' edge='end'>
                             <MoreVertIcon />
                         </IconButton>
                     </motion.div>
@@ -154,40 +132,24 @@ export default function SettingsMenu({ config, title }: Props) {
                         exit={{ y: 50, opacity: 0 }}
                         transition={transition}
                     >
-                        {config.map(
-                            ({
-                                title: sectionTitle,
-                                description,
-                                component,
-                            }) => (
-                                <Accordion
-                                    key={sectionTitle}
-                                    expanded={expanded.has(sectionTitle)}
-                                    onChange={handleChange(sectionTitle)}
-                                    elevation={
-                                        expanded.has(sectionTitle) ? 8 : 1
-                                    }
+                        {config.map(({ title: sectionTitle, description, component }) => (
+                            <Accordion
+                                key={sectionTitle}
+                                expanded={expanded.has(sectionTitle)}
+                                onChange={handleChange(sectionTitle)}
+                                elevation={expanded.has(sectionTitle) ? 8 : 1}
+                            >
+                                <AccordionSummary
+                                    expandIcon={<ExpandMoreIcon />}
+                                    aria-controls={`${sectionTitle}-content`}
+                                    id={`${sectionTitle}-header`}
                                 >
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls={`${sectionTitle}-content`}
-                                        id={`${sectionTitle}-header`}
-                                    >
-                                        <Typography className={classes.heading}>
-                                            {sectionTitle}
-                                        </Typography>
-                                        <Typography
-                                            className={classes.secondaryHeading}
-                                        >
-                                            {description}
-                                        </Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        {getDetails(component, sectionTitle)}
-                                    </AccordionDetails>
-                                </Accordion>
-                            )
-                        )}
+                                    <Typography className={classes.heading}>{sectionTitle}</Typography>
+                                    <Typography className={classes.secondaryHeading}>{description}</Typography>
+                                </AccordionSummary>
+                                <AccordionDetails>{getDetails(component, sectionTitle)}</AccordionDetails>
+                            </Accordion>
+                        ))}
                     </motion.div>
                 </Grid>
             </Grid>

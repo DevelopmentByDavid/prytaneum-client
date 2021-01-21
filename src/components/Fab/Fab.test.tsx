@@ -6,7 +6,7 @@ import Fab from './Fab';
 
 describe('Fab', function () {
     let container: HTMLDivElement | null = null;
-    const OLD_ENV = process.env;
+    const OLD_ENV = import.meta.env;
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -16,7 +16,7 @@ describe('Fab', function () {
         // this is to isolate the local state so when running other tests, we do not conflict
         // https://stackoverflow.com/questions/48033841/test-process-env-with-jest
         jest.resetModules();
-        process.env = { ...OLD_ENV }; // make a copy
+        import.meta.env = { ...OLD_ENV }; // make a copy
     });
 
     afterEach(() => {
@@ -27,7 +27,7 @@ describe('Fab', function () {
         }
         container = null;
         jest.restoreAllMocks();
-        process.env = OLD_ENV; // restore old env
+        import.meta.env = OLD_ENV; // restore old env
     });
 
     it('should render', () => {

@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import faker from 'faker/locale/en';
+import faker from 'faker';
 
 const createNames = (num: number) => {
     const list = [];

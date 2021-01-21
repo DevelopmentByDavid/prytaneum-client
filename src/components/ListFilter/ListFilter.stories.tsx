@@ -1,5 +1,5 @@
 import React from 'react';
-import faker from 'faker/locale/en';
+import faker from 'faker';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 
 import { search as utilSearch, applyFilters, FilterFunc } from 'utils/filters';

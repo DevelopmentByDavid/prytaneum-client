@@ -14,7 +14,7 @@ jest.mock('utils/axios');
 
 let container: HTMLDivElement | null;
 
-const OLD_ENV = process.env;
+const OLD_ENV = import.meta.env;
 
 beforeEach(() => {
     container = document.createElement('div');
@@ -29,7 +29,7 @@ afterEach(() => {
     }
     container = null;
     jest.resetModules();
-    process.env = { ...OLD_ENV }; // make a copy
+    import.meta.env = { ...OLD_ENV }; // make a copy
 });
 
 describe('<UserInfo/> rendering', () => {

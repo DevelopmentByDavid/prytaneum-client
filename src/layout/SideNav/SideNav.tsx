@@ -11,12 +11,7 @@ import type { ClientSafeUser } from 'prytaneum-typings';
 import { Update, State } from 'history';
 
 import history from 'utils/history';
-import {
-    StyledSubheader,
-    StyledDivider,
-    StyledListItemIcon,
-    StyledListItem,
-} from './StyledComponents';
+import { StyledSubheader, StyledDivider, StyledListItemIcon, StyledListItem } from './StyledComponents';
 import MovingBg from './MovingBg';
 
 const useStyles = makeStyles((theme) => ({
@@ -60,9 +55,7 @@ const urls: Record<Keys, string> = {
 };
 
 const findTab = (pathname: string): Keys | undefined => {
-    const found = Object.entries(urls).find(([, path]) =>
-        pathname.includes(path)
-    );
+    const found = Object.entries(urls).find(([, path]) => pathname.includes(path));
     if (found) return found[0] as Keys;
     return undefined;
 };
@@ -78,12 +71,8 @@ function getInitialState(): Keys {
 export default function SideNav({ user, onClick }: Props) {
     const classes = useStyles();
     const [selected, setSelected] = React.useState<Keys>(getInitialState);
-    const isAdmin = React.useMemo(() => user.roles.includes('admin'), [
-        user.roles,
-    ]);
-    const isOrganizer = React.useMemo(() => user.roles.includes('organizer'), [
-        user.roles,
-    ]);
+    const isAdmin = React.useMemo(() => user.roles.includes('admin'), [user.roles]);
+    const isOrganizer = React.useMemo(() => user.roles.includes('organizer'), [user.roles]);
 
     function handleClick(key: Keys) {
         return () => {
@@ -113,11 +102,7 @@ export default function SideNav({ user, onClick }: Props) {
                 transition={{ ease: 'easeInOut' }}
             > */}
             <AnimateSharedLayout>
-                <StyledListItem
-                    button
-                    onClick={handleClick('Dashboard')}
-                    selected={selected === 'Dashboard'}
-                >
+                <StyledListItem button onClick={handleClick('Dashboard')} selected={selected === 'Dashboard'}>
                     {selected === 'Dashboard' && <MovingBg />}
                     <StyledListItemIcon>
                         <DashboardIcon />
@@ -148,11 +133,7 @@ export default function SideNav({ user, onClick }: Props) {
                         <StyledSubheader>Administrator</StyledSubheader>
                         <StyledDivider />
 
-                        <StyledListItem
-                            button
-                            onClick={handleClick('User List')}
-                            selected={selected === 'User List'}
-                        >
+                        <StyledListItem button onClick={handleClick('User List')} selected={selected === 'User List'}>
                             {selected === 'User List' && <MovingBg />}
                             <StyledListItemIcon>
                                 <ListAltIcon />

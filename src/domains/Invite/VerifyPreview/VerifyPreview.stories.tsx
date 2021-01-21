@@ -1,5 +1,5 @@
 import React from 'react';
-import faker from 'faker/locale/en';
+import faker from 'faker';
 import { makeGenFn } from 'prytaneum-typings';
 
 import Component from './VerifyPreview';

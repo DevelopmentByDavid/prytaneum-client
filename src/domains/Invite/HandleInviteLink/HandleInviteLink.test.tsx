@@ -2,7 +2,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
-import jsonwebtoken from 'jsonwebtoken';
+// import jsonwebtoken from 'jsonwebtoken';
 
 import HandleInviteLink from './HandleInviteLink';
 
@@ -10,10 +10,10 @@ jest.mock('hooks/useSnack');
 
 describe('Handle Invite Link', () => {
     let container: HTMLElement | null = null;
-    const testValidToken = jsonwebtoken.sign(
-        { email: 'test@test.com' },
-        'secret'
-    );
+    // const testValidToken = jsonwebtoken.sign(
+    //     { email: 'test@test.com' },
+    //     'secret'
+    // );
 
     beforeEach(() => {
         // setup a DOM element as a render target
@@ -34,10 +34,7 @@ describe('Handle Invite Link', () => {
     // eslint-disable-next-line jest/expect-expect
     it('should render', async () => {
         ReactTestUtils.act(() => {
-            render(
-                <HandleInviteLink inviteToken={testValidToken} />,
-                container
-            );
+            render(<HandleInviteLink inviteToken='123' />, container);
         });
     });
 });
