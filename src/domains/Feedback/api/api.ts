@@ -131,14 +131,17 @@ export async function deleteBugReport(_id: string) {
     return axios.post('/api/bugs/delete-report', body);
 }
 
+export interface Rating {
+    values: Array<{ question: string; value: number | null }>;
+    feedback: string;
+}
+
 export async function rateTownhall(
-    townhallId: string,
-    values: Array<{ question: string, value?: number | null }>,
-    feedback: string
+    rating: Rating,
+    townhallId: string
 ) {
-    if (!townhallId || !values || !feedback) {
+    if (!townhallId || !rating.values || !rating.feedback) {
         throw errors.internalError();
     }
-    const body = { townhallId, values, feedback };
-    return axios.post('/api/rating/rate-townhall', body);
+    return axios.put(`/api/townhalls/${townhallId}/rating`, rating);
 }

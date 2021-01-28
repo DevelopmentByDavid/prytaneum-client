@@ -29,7 +29,7 @@ export function Basic({questions}: Props) {
     const buildQuestions = () => {
         const questionArray: Array<Question> = [];
         for (let i = 0; i < questions.length; i += 1) {
-            questionArray.push({ question: questions[i] });
+            questionArray.push({ question: questions[i], value: null });
         }
         return questionArray;
     };

@@ -13,7 +13,7 @@ interface DefaultProps {
 
 export interface Question {
     question: string;
-    value?: number | null;
+    value: number | null;
 }
 
 interface Props {
@@ -32,8 +32,8 @@ export default function RatingWidget({
     const [values, setValues] = useState<Array<Question>>(questions);
     const [feedback, setFeedback] = useState<string>('');
     const apiRequest = React.useCallback(
-        () => rateTownhall(townhallId, values, feedback),
-        [townhallId, values]
+        () => rateTownhall({values, feedback}, townhallId),
+        [feedback, townhallId, values]
     );
 
     const [sendRequest, isLoading] = useEndpoint(apiRequest, {
