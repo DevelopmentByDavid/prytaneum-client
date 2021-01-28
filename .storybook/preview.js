@@ -1,16 +1,18 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
 import { withPerformance } from 'storybook-addon-performance';
+import { createStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
 
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DateFnsUtils from '@date-io/date-fns';
 import SnackContext from '../src/contexts/Snack';
 import ThemeProvider from '../src/contexts/Theme';
-import DeviceContext from '../src/contexts/Device';
+import rootReducer from '../src/reducers';
 import './main.css';
 
-if (typeof global.process === 'undefined') {
+if (typeof global.process === 'undefined' && process.env.CI !== 'true') {
     const { worker } = require('../src/mock/browser');
 
     // Start the mocking when each story is loaded.
@@ -19,13 +21,15 @@ if (typeof global.process === 'undefined') {
     worker.start();
 }
 
+const store = createStore(rootReducer);
+
 addDecorator((storyFn) => (
     <ThemeProvider>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <CssBaseline />
-            <SnackContext maxSnack={1}>
-                <DeviceContext>{storyFn()}</DeviceContext>
-            </SnackContext>
+            <Provider store={store}>
+                <SnackContext maxSnack={1}>{storyFn()}</SnackContext>
+            </Provider>
         </MuiPickersUtilsProvider>
     </ThemeProvider>
 ));
@@ -42,4 +46,5 @@ addParameters({
 
 export const parameters = {
     layout: 'fullscreen',
+    chromatic: { disable: true },
 };

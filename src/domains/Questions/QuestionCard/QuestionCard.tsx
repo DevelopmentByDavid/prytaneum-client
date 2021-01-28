@@ -10,7 +10,10 @@ import {
     CardProps,
     CardHeaderProps,
     CardContentProps,
+    Paper,
 } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
+import { Skeleton } from '@material-ui/lab';
 
 import { formatDate } from 'utils/format';
 
@@ -23,6 +26,15 @@ export interface Props {
     style?: React.CSSProperties;
     className?: string;
     quote?: Question | null;
+}
+
+export function QuestionCardSkeleton() {
+    return (
+        <Paper style={{ width: '100%', padding: 8, marginBottom: 8 }}>
+            <Skeleton variant='circle' width={40} height={40} style={{ marginBottom: 12 }} />
+            <Skeleton variant='rect' width='100%' height={118} />
+        </Paper>
+    );
 }
 
 /**
@@ -38,10 +50,10 @@ function QuestionCard({
     className,
     quote,
 }: Props) {
-    const [time, month] = React.useMemo(
-        () => formatDate(question.meta.createdAt, 'p-P').split('-'),
-        [question.meta.createdAt]
-    );
+    const theme = useTheme();
+    const [time, month] = React.useMemo(() => formatDate(question.meta.createdAt, 'p-P').split('-'), [
+        question.meta.createdAt,
+    ]);
     const subheader = React.useMemo(
         () => (
             <Typography variant='caption' color='textSecondary'>
@@ -53,27 +65,31 @@ function QuestionCard({
         [time, month]
     );
     return (
-        <Card raised style={style} className={className} {...cardProps}>
-            <CardHeader
-                title={question.meta.createdBy.name.first}
-                subheader={subheader}
-                avatar={
-                    <Avatar>{question.meta.createdBy.name.first[0]}</Avatar>
-                }
-                {...cardHeaderProps}
-            />
-            {quote && (
-                <QuestionCard
-                    question={quote}
-                    style={{ margin: '0 32px', border: '1px solid lightgrey' }}
-                    CardProps={{ elevation: 0 }}
+        <div className={className} style={style}>
+            <Card {...cardProps}>
+                <CardHeader
+                    title={question.meta.createdBy.name.first}
+                    subheader={subheader}
+                    avatar={<Avatar>{question.meta.createdBy.name.first[0]}</Avatar>}
+                    {...cardHeaderProps}
                 />
-            )}
-            <CardContent {...cardContentProps}>
-                <Typography>{question.question}</Typography>
-            </CardContent>
-            {children}
-        </Card>
+                {quote && (
+                    <QuestionCard
+                        question={quote}
+                        style={{
+                            margin: '0 32px',
+                            border: '1px solid lightgrey',
+                            borderRadius: theme.shape.borderRadius,
+                        }}
+                        CardProps={{ elevation: 0 }}
+                    />
+                )}
+                <CardContent {...cardContentProps}>
+                    <Typography>{question.question}</Typography>
+                </CardContent>
+                {children}
+            </Card>
+        </div>
     );
 }
 
