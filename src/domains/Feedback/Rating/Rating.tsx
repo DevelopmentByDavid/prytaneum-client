@@ -1,7 +1,16 @@
-import React, { useState } from 'react';
-import { Typography, Grid, Button, TextField } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import {
+    Typography,
+    Grid,
+    Button,
+    TextField,
+    Switch,
+    CircularProgress,
+    FormGroup,
+    FormControlLabel,
+} from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import type { RatingForm } from 'prytaneum-typings';
 
 import useEndpoint from 'hooks/useEndpoint';
 
@@ -11,30 +20,16 @@ interface DefaultProps {
     townhallId: string;
 }
 
-export interface Question {
-    question: string;
-    value: number | null;
-}
-
 interface Props {
-    questions: Array<Question>;
+    questions: Array<string>;
     onSuccess: () => void;
     onFailure: () => void;
-    townhallId?: string;
 }
 
-export default function RatingWidget({
-    questions,
-    onSuccess,
-    onFailure,
-    townhallId,
-}: Props & DefaultProps) {
-    const [values, setValues] = useState<Array<Question>>(questions);
-    const [feedback, setFeedback] = useState<string>('');
-    const apiRequest = React.useCallback(
-        () => rateTownhall({values, feedback}, townhallId),
-        [feedback, townhallId, values]
-    );
+export default function RatingWidget({ questions, onSuccess, onFailure, townhallId }: Props & DefaultProps) {
+    const [rating, setRating] = useState<RatingForm>({ values: {}, feedback: '' });
+    const [anonymous, setAnonymous] = useState<boolean>(false);
+    const apiRequest = React.useCallback(() => rateTownhall(rating, townhallId), [rating, townhallId]);
 
     const [sendRequest, isLoading] = useEndpoint(apiRequest, {
         onSuccess,
@@ -45,35 +40,39 @@ export default function RatingWidget({
         sendRequest();
     };
 
+    const toggleAnonymous = () => {
+        const userId = 'test'; // TODO Get userId from context
+        setAnonymous(!anonymous);
+        if (anonymous) setRating({ ...rating, userId: undefined });
+        else setRating({ ...rating, userId });
+    };
+
+    useEffect(() => {
+        const updatedRating = { values: {}, feedback: '' };
+        for (let i = 0; i < questions.length; i += 1) {
+            updatedRating.values = { ...updatedRating.values, [questions[i]]: null };
+        }
+        setRating(updatedRating);
+    }, [questions]);
+
     return (
         <Grid container justify='center' xs='auto' item>
-            {questions.map((item, index) => { 
+            {questions.map((question, index) => {
                 return (
                     <Grid container justify='center' xs='auto' item key={index}>
-                        <Grid
-                            container
-                            justify='center'
-                            item
-                            component={Typography}
-                        >
-                            {item.question}
+                        <Grid container justify='center' item component={Typography}>
+                            {question}
                         </Grid>
                         <Rating
-                            name={item.question}
-                            value={item.value}
-                            onChange={(event, newValue) => {
-                                const updatedValues = [...values];
-                                updatedValues[index] = {
-                                    ...item,
-                                    value: newValue,
-                                };
-                                setValues(updatedValues);
+                            name={question}
+                            value={rating.values[question]}
+                            onChange={(e, newValue) => {
+                                setRating({ ...rating, values: { ...rating.values, [question]: newValue } });
                             }}
                         />
                     </Grid>
                 );
-            }
-            )}
+            })}
             <TextField
                 id='feedback'
                 label='Feedback'
@@ -84,17 +83,20 @@ export default function RatingWidget({
                 InputLabelProps={{
                     shrink: true,
                 }}
-                onChange={(e) => setFeedback(e.target.value)}
+                onChange={(e) => setRating({ ...rating, feedback: e.target.value })}
             />
+            <FormGroup>
+                <FormControlLabel
+                    value='Anonymous'
+                    label='Anonymous'
+                    control={<Switch checked={anonymous} onChange={toggleAnonymous} name='checkedB' color='primary' />}
+                />
+            </FormGroup>
             <Grid container justify='center' item>
                 {isLoading ? (
                     <CircularProgress />
                 ) : (
-                    <Button
-                        variant='contained'
-                        onClick={handleSubmit}
-                        disabled={isLoading || !feedback}
-                    >
+                    <Button variant='contained' onClick={handleSubmit} disabled={isLoading}>
                         Submit
                     </Button>
                 )}

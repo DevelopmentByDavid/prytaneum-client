@@ -1,5 +1,6 @@
 import axios from 'utils/axios';
 import errors from 'utils/errors';
+import type { RatingForm } from 'prytaneum-typings';
 import {
     FeedbackForm,
     FeedbackReport,
@@ -137,11 +138,11 @@ export interface Rating {
 }
 
 export async function rateTownhall(
-    rating: Rating,
+    rating: RatingForm,
     townhallId: string
 ) {
     if (!townhallId || !rating.values || !rating.feedback) {
         throw errors.internalError();
     }
-    return axios.put(`/api/townhalls/${townhallId}/rating`, rating);
+    return axios.put(`/api/townhalls/${townhallId}/rating?userId=${rating.userId}`, rating);
 }

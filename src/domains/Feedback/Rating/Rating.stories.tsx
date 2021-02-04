@@ -24,27 +24,13 @@ interface Props {
 
 export function Basic({questions}: Props) {
     const townhall = makeTownhall();
-    const [questionArr, setQuestionArr] = useState<Array<Question>>([]);
-
-    const buildQuestions = () => {
-        const questionArray: Array<Question> = [];
-        for (let i = 0; i < questions.length; i += 1) {
-            questionArray.push({ question: questions[i], value: null });
-        }
-        return questionArray;
-    };
-
-    useEffect(() => {
-        const result = buildQuestions();
-        setQuestionArr(result);
-    }, []);
 
     return (
         <Main>
             <UserProvider>
                 <TownhallProvider value={townhall} townhallId='123'>
                     <Component
-                        questions={questionArr}
+                        questions={questions}
                         townhallId={townhall._id}
                         onSuccess={() => {}}
                         onFailure={() => {}}
