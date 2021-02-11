@@ -144,5 +144,7 @@ export async function rateTownhall(
     if (!townhallId || !rating.values || !rating.feedback) {
         throw errors.internalError();
     }
-    return axios.put(`/api/townhalls/${townhallId}/rating?userId=${rating.userId}`, rating);
+    if (rating.userId) return axios.put(`/api/townhalls/${townhallId}/ratings?userId=${rating.userId}`, rating);
+    return axios.put(`/api/townhalls/${townhallId}/ratings`, rating);
+    
 }
