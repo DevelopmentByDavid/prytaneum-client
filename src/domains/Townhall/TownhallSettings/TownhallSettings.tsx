@@ -22,6 +22,7 @@ import SpeakerSettings from './SpeakerSettings';
 import ModeratorSettings from './ModeratorSettings';
 import PreviewSettings from './PreviewSettings';
 import VideoSettings from './VideoSettings';
+import RatingSettings from './RatingSettings';
 
 import { configureTownhall } from '../api';
 
@@ -53,6 +54,18 @@ export default function TownhallSettings() {
         },
     });
 
+    const postTownhallSubSections = React.useMemo(() => [
+        {
+            title: 'Rating',
+            component: (
+                <RatingSettings
+                    onChange={handleChange('rating')}
+                    value={state.rating}
+                />
+            ),
+        },
+    ], [handleChange, state]);
+
     const componentSubSections = React.useMemo(
         () => [
             {
@@ -65,8 +78,31 @@ export default function TownhallSettings() {
                     <QuestionFeedSettings onChange={handleChange('questionQueue')} value={state.questionQueue} />
                 ),
             },
+            {
+                title: 'Post Townhall',
+                description: 'Turn on and off optional post townhall settings',
+                component: (
+                    <Grid container spacing={2}>
+                        {postTownhallSubSections.map(({ title, component }, idx) => (
+                            <React.Fragment key={title}>
+                                <Grid item xs={12}>
+                                    <Typography variant='overline'>{title}</Typography>
+                                </Grid>
+                                <Grid item xs={12}>
+                                    {component}
+                                </Grid>
+                                {idx !== postTownhallSubSections.length - 1 && (
+                                    <Grid item xs={12}>
+                                        <Divider />
+                                    </Grid>
+                                )}
+                            </React.Fragment>
+                        ))}
+                    </Grid>
+                ),
+            },
         ],
-        [handleChange, state]
+        [handleChange, state, postTownhallSubSections]
     );
 
     const inviteSubSections = React.useMemo(

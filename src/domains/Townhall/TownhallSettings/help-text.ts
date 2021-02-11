@@ -22,4 +22,7 @@ export default {
         },
         registrants: 'The list of registrants for this townhall',
     },
+    rating: {
+        enabled: 'Enables rating page redirect after Townhall'
+    }
 };

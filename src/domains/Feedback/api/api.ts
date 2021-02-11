@@ -1,5 +1,6 @@
 import axios from 'utils/axios';
 import errors from 'utils/errors';
+import type { RatingForm } from 'prytaneum-typings';
 import {
     FeedbackForm,
     FeedbackReport,
@@ -129,4 +130,21 @@ export async function deleteBugReport(_id: string) {
     }
     const body = { _id };
     return axios.post('/api/bugs/delete-report', body);
+}
+
+export interface Rating {
+    values: Array<{ question: string; value: number | null }>;
+    feedback: string;
+}
+
+export async function rateTownhall(
+    rating: RatingForm,
+    townhallId: string
+) {
+    if (!townhallId || !rating.values || !rating.feedback) {
+        throw errors.internalError();
+    }
+    if (rating.userId) return axios.put(`/api/townhalls/${townhallId}/ratings?userId=${rating.userId}`, rating);
+    return axios.put(`/api/townhalls/${townhallId}/ratings`, rating);
+    
 }
