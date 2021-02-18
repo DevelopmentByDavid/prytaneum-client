@@ -10,8 +10,10 @@ import {
     FormControlLabel,
 } from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
+import { makeStyles } from '@material-ui/core/styles';
 import type { RatingForm } from 'prytaneum-typings';
 
+import LoadingButton from 'components/LoadingButton';
 import useEndpoint from 'hooks/useEndpoint';
 
 import { rateTownhall } from '../api';
@@ -26,7 +28,18 @@ interface Props {
     onFailure: () => void;
 }
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        width: '100%',
+        height: '100%',
+    },
+    btn: {
+        marginTop: theme.spacing(3),
+    },
+}));
+
 export default function RatingWidget({ questions, onSuccess, onFailure, townhallId }: Props & DefaultProps) {
+    const classes = useStyles();
     const [rating, setRating] = useState<RatingForm>({ values: {}, feedback: '' });
     const [anonymous, setAnonymous] = useState<boolean>(false);
     const apiRequest = React.useCallback(() => rateTownhall(rating, townhallId), [rating, townhallId]);
@@ -56,51 +69,67 @@ export default function RatingWidget({ questions, onSuccess, onFailure, townhall
     }, [questions]);
 
     return (
-        <Grid container justify='center' xs='auto' item>
-            {questions.map((question, index) => {
-                return (
-                    <Grid container justify='center' xs='auto' item key={index}>
-                        <Grid container justify='center' item component={Typography}>
+        <div className={classes.root}>
+            <Grid container>
+                {questions.map((question, index) => (
+                    <Grid container justify='center' item xs={12} key={index}>
+                        <Grid item xs='auto' component={Typography}>
                             {question}
                         </Grid>
-                        <Rating
-                            name={question}
-                            value={rating.values[question]}
-                            onChange={(e, newValue) => {
-                                setRating({ ...rating, values: { ...rating.values, [question]: newValue } });
-                            }}
-                        />
+                        <Grid item xs={12} container justify='center'>
+                            <Rating
+                                name={question}
+                                value={rating.values[question]}
+                                onChange={(e, newValue) => {
+                                    setRating({
+                                        ...rating,
+                                        values: { ...rating.values, [question]: newValue },
+                                    });
+                                }}
+                            />
+                        </Grid>
                     </Grid>
-                );
-            })}
-            <TextField
-                id='feedback'
-                label='Feedback'
-                style={{ margin: 8 }}
-                placeholder='Feedback'
-                fullWidth
-                margin='normal'
-                InputLabelProps={{
-                    shrink: true,
-                }}
-                onChange={(e) => setRating({ ...rating, feedback: e.target.value })}
-            />
-            <FormGroup>
-                <FormControlLabel
-                    value='Anonymous'
-                    label='Anonymous'
-                    control={<Switch checked={anonymous} onChange={toggleAnonymous} name='checkedB' color='primary' />}
-                />
-            </FormGroup>
-            <Grid container justify='center' item>
-                {isLoading ? (
-                    <CircularProgress />
-                ) : (
-                    <Button variant='contained' onClick={handleSubmit} disabled={isLoading}>
-                        Submit
-                    </Button>
-                )}
+                ))}
+                <Grid item xs={12}>
+                    <TextField
+                        id='feedback'
+                        label='Feedback'
+                        // style={{ margin: 8 }}
+                        // placeholder='Feedback'
+                        fullWidth
+                        // margin='normal'
+                        // InputLabelProps={{
+                        //     shrink: true,
+                        // }}
+                        onChange={(e) => setRating({ ...rating, feedback: e.target.value })}
+                    />
+                </Grid>
+
+                <Grid item xs={12} container>
+                    <FormGroup>
+                        <FormControlLabel
+                            value='Anonymous'
+                            label='Anonymous'
+                            control={
+                                <Switch
+                                    checked={anonymous}
+                                    onChange={toggleAnonymous}
+                                    name='checkedB'
+                                    color='primary'
+                                />
+                            }
+                        />
+                    </FormGroup>
+                </Grid>
+
+                <Grid container justify='flex-end' item xs={12} className={classes.btn}>
+                    <LoadingButton loading={isLoading}>
+                        <Button variant='contained' onClick={handleSubmit}>
+                            Submit
+                        </Button>
+                    </LoadingButton>
+                </Grid>
             </Grid>
-        </Grid>
+        </div>
     );
 }

@@ -8743,6 +8743,10 @@ fake-tag@^2.0.0:
   version "5.1.0"
   resolved "https://github.com/bustle/faker.js#5a89ddf48af8baec84c8d562ca6dccf6f3e2466d"
 
+"faker@https://github.com/marak/Faker.js#v5.1.0":
+  version "5.1.0"
+  resolved "https://github.com/marak/Faker.js#e0b392de967d3000f59ef712c666786aa5ae19b7"
+
 fast-deep-equal@^3.1.1:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz#3a7d56b559d6cbc3eb512325244e619a65c6c525"
@@ -14536,14 +14540,14 @@ prr@~1.0.1:
   resolved "https://registry.yarnpkg.com/prr/-/prr-1.0.1.tgz#d3fc114ba06995a45ec6893f484ceb1d78f5f476"
   integrity sha1-0/wRS6BplaRexok/SEzrHXj19HY=
 
-"prytaneum-typings@https://github.com/c2c-project/prytaneum-typings#v1.0.0-alpha.81":
+"prytaneum-typings@https://github.com/kadey001/prytaneum-typings#v1.0.0-alpha.68":
   version "1.0.0"
-  resolved "https://github.com/c2c-project/prytaneum-typings#45e040f260f7ba5ea1d8f17aaf05ac3f8241c92c"
+  resolved "https://github.com/kadey001/prytaneum-typings#70a2d066fba901fe59d06b455d4686c84d00985a"
   dependencies:
     "@types/faker" "^4.1.4"
     "@types/mongodb" "^3.5.32"
     "@types/node" "^14.14.6"
-    faker "https://github.com/bustle/faker.js#master"
+    faker "https://github.com/marak/Faker.js#v5.1.0"
 
 pseudomap@^1.0.2:
   version "1.0.2"
