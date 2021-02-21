@@ -114,7 +114,7 @@
         "jsdoc-mermaid": "^1.0.0",
         "jsonwebtoken": "^8.5.1",
         "msw": "^0.21.3",
-        "prytaneum-typings": "https://github.com/kadey001/prytaneum-typings#v1.0.0-alpha.68",
+        "prytaneum-typings": "https://github.com/c2c-project/prytaneum-typings#250d4b2c187f19992864d2e8b05c8dd9a89f7e83",
         "react-app-rewired": "^2.1.8",
         "react-is": "^16.13.1",
         "react-test-renderer": "^16.13.1",
