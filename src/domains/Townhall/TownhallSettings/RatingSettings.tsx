@@ -7,17 +7,17 @@ import SettingsItem from 'components/SettingsItem';
 import text from './help-text';
 import { Props, areEqual } from './utils';
 
-export default React.memo(function ChatSettings({
+export default React.memo(function RatingSettings({
     onChange,
     value,
 }: Props<'rating'>) {
-    const ref = React.useRef(value);
+    const ratingStateRef = React.useRef(value);
     const handleChange = (key: keyof typeof value) => (
         e: React.ChangeEvent<HTMLInputElement>
     ) => {
         const { checked } = e.target;
         if (key === 'enabled') {
-            if (ref.current.enabled === checked) onChange(ref.current);
+            if (ratingStateRef.current.enabled === checked) onChange(ratingStateRef.current);
             else
                 onChange({
                     enabled: checked,
