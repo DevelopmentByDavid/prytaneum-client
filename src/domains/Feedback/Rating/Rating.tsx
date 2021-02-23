@@ -4,10 +4,6 @@ import {
     Grid,
     Button,
     TextField,
-    Switch,
-    CircularProgress,
-    FormGroup,
-    FormControlLabel,
 } from '@material-ui/core';
 import Rating from '@material-ui/lab/Rating';
 import { makeStyles } from '@material-ui/core/styles';
@@ -41,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
 export default function RatingWidget({ questions, onSuccess, onFailure, townhallId }: Props & DefaultProps) {
     const classes = useStyles();
     const [rating, setRating] = useState<RatingForm>({ values: {}, feedback: '' });
-    const [anonymous, setAnonymous] = useState<boolean>(false);
     const apiRequest = React.useCallback(() => rateTownhall(rating, townhallId), [rating, townhallId]);
 
     const [sendRequest, isLoading] = useEndpoint(apiRequest, {
@@ -51,13 +46,6 @@ export default function RatingWidget({ questions, onSuccess, onFailure, townhall
 
     const handleSubmit = () => {
         sendRequest();
-    };
-
-    const toggleAnonymous = () => {
-        const userId = 'test'; // TODO Get userId from context
-        setAnonymous(!anonymous);
-        if (anonymous) setRating({ ...rating, userId: undefined });
-        else setRating({ ...rating, userId });
     };
 
     useEffect(() => {
@@ -94,34 +82,10 @@ export default function RatingWidget({ questions, onSuccess, onFailure, townhall
                     <TextField
                         id='feedback'
                         label='Feedback'
-                        // style={{ margin: 8 }}
-                        // placeholder='Feedback'
                         fullWidth
-                        // margin='normal'
-                        // InputLabelProps={{
-                        //     shrink: true,
-                        // }}
                         onChange={(e) => setRating({ ...rating, feedback: e.target.value })}
                     />
                 </Grid>
-
-                <Grid item xs={12} container>
-                    <FormGroup>
-                        <FormControlLabel
-                            value='Anonymous'
-                            label='Anonymous'
-                            control={
-                                <Switch
-                                    checked={anonymous}
-                                    onChange={toggleAnonymous}
-                                    name='checkedB'
-                                    color='primary'
-                                />
-                            }
-                        />
-                    </FormGroup>
-                </Grid>
-
                 <Grid container justify='flex-end' item xs={12} className={classes.btn}>
                     <LoadingButton loading={isLoading}>
                         <Button variant='contained' onClick={handleSubmit}>
