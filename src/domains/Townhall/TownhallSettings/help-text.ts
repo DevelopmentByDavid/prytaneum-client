@@ -2,17 +2,14 @@
 export default {
     chat: {
         enabled: 'Enables the Chat component for this Townhall',
-        automated:
-            'Automatically filters out toxic messages using Artificial Intelligence/Machine Learning',
+        automated: 'Automatically filters out toxic messages using Artificial Intelligence/Machine Learning',
     },
     questionQueue: {
         transparent: 'Lets Townhall participants view submitted questions',
-        automated:
-            'Automatically groups questions together using Artificial Intellligence/Machine Learning',
+        automated: 'Automatically groups questions together using Artificial Intellligence/Machine Learning',
     },
     credits: {
-        enabled:
-            'Allows participants to view the list of moderators, organizers, and developers',
+        enabled: 'Allows participants to view the list of moderators, organizers, and developers',
         list: 'Modify the credits list',
     },
     registration: {
@@ -23,6 +20,6 @@ export default {
         registrants: 'The list of registrants for this townhall',
     },
     rating: {
-        enabled: 'Enables rating page redirect after Townhall'
-    }
+        enabled: 'Request users rate their Townhall experience',
+    },
 };
