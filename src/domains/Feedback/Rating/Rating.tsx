@@ -14,12 +14,9 @@ import useEndpoint from 'hooks/useEndpoint';
 
 import { rateTownhall } from '../api';
 
-interface DefaultProps {
-    townhallId: string;
-}
-
 interface Props {
     questions: Array<string>;
+    townhallId: string;
     onSuccess: () => void;
     onFailure: () => void;
 }
@@ -34,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function RatingWidget({ questions, onSuccess, onFailure, townhallId }: Props & DefaultProps) {
+export default function RatingWidget({ questions, onSuccess, onFailure, townhallId }: Props) {
     const classes = useStyles();
     const [rating, setRating] = useState<RatingForm>({ values: {}, feedback: '' });
     const apiRequest = React.useCallback(() => rateTownhall(rating, townhallId), [rating, townhallId]);
