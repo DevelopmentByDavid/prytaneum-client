@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 
 import Component, { PieDatum } from './PieChart';
 
-export default { title: 'Components/Pie Chart' };
+export default { title: '@app/components/Pie Chart' };
 
 const Nivo: PieDatum[] = [
     {

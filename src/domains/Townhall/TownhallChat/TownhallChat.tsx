@@ -10,15 +10,15 @@ import React from 'react';
 //     updateChatMessage,
 //     deleteChatMessage,
 //     readChatMessages,
-// } from 'reducers';
-// import useSocketio, { SocketFn } from 'hooks/useSocketio';
-// import useEndpoint from 'hooks/useEndpoint';
-// import useTownhall from 'hooks/useTownhall';
-// import useUser from 'hooks/useUser';
-// import Chat from 'components/Chat';
-// import Loader from 'components/Loader';
-// import ChatMessage from 'components/ChatMessage';
-// import TextField from 'components/TextField';
+// } from '@app/reducers';
+// import useSocketio, { SocketFn } from '@app/hooks/useSocketio';
+// import useEndpoint from '@app/hooks/useEndpoint';
+// import useTownhall from '@app/hooks/useTownhall';
+// import useUser from '@app/hooks/useUser';
+// import Chat from '@app/components/Chat';
+// import Loader from '@app/components/Loader';
+// import ChatMessage from '@app/components/ChatMessage';
+// import TextField from '@app/components/TextField';
 // import { createChatMessage, getChatmessages } from '../api';
 
 // interface Props {

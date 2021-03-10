@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { handleNavigation } from 'utils/history';
+import { handleNavigation } from '@app/utils/history';
 
 import Title from './Title';
 

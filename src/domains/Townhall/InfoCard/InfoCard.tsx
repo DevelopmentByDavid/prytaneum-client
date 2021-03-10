@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ExpandIcon from '@material-ui/icons/ExpandMore';
 import clsx from 'clsx';
 
-import useTownhall from 'hooks/useTownhall';
+import useTownhall from '@app/hooks/useTownhall';
 
 const useStyles = makeStyles((theme) => ({
     root: {

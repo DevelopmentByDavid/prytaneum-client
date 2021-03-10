@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import UserProvider from 'contexts/User';
+import UserProvider from '@app/contexts/User';
 import UserMenu from './UserMenu';
 
-export default { title: 'Domains/User/User Menu', parameters: { layout: 'centered' } } as Meta;
+export default { title: '@app/domains/User/User Menu', parameters: { layout: 'centered' } } as Meta;
 
 export function Basic() {
     return (

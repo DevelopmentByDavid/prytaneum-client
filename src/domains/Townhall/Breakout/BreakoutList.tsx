@@ -3,10 +3,10 @@ import { MenuItem } from '@material-ui/core';
 import type { Breakout } from 'prytaneum-typings';
 import { useDispatch } from 'react-redux';
 
-import Loader from 'components/Loader';
-import TextField from 'components/TextField';
-import useEndpoint from 'hooks/useEndpoint';
-import { breakoutRoomChange } from 'reducers';
+import Loader from '@app/components/Loader';
+import TextField from '@app/components/TextField';
+import useEndpoint from '@app/hooks/useEndpoint';
+import { breakoutRoomChange } from '@app/reducers';
 import { changeBreakoutRoom, getBreakoutRooms } from '../api';
 
 export default function BreakoutList({ townhallId, breakoutId }: { townhallId: string; breakoutId: string }) {

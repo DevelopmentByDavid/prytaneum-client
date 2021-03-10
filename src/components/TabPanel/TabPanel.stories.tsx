@@ -3,7 +3,7 @@ import { Paper } from '@material-ui/core';
 
 import Component, { TabPanels } from './TabPanel';
 
-export default { title: 'Components/Tab Panel' };
+export default { title: '@app/components/Tab Panel' };
 
 export function TabPanel() {
     const [state, setState] = React.useState(0);

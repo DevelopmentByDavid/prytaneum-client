@@ -4,7 +4,7 @@ import TownhallIcon from '@material-ui/icons/AccountBalance';
 
 import Component from './IconBar';
 
-export default { title: 'Components/Icon Bar' };
+export default { title: '@app/components/Icon Bar' };
 
 export function Basic() {
     return (

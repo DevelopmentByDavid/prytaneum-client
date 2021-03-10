@@ -2,11 +2,11 @@ import React from 'react';
 import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
-import TextField from 'components/TextField';
-import LoadingButton from 'components/LoadingButton';
+import TextField from '@app/components/TextField';
+import LoadingButton from '@app/components/LoadingButton';
 import { AxiosResponse } from 'axios';
-import useSnack from 'hooks/useSnack';
-import useEndpoint from 'hooks/useEndpoint';
+import useSnack from '@app/hooks/useSnack';
+import useEndpoint from '@app/hooks/useEndpoint';
 import {
     createBugReport,
     createFeedbackReport,

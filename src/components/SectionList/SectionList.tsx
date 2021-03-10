@@ -13,7 +13,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
-import history from 'utils/history';
+import history from '@app/utils/history';
 
 export interface Datum {
     image?: string;

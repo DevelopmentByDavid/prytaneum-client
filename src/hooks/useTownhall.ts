@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TownhallContext } from 'contexts/Townhall';
+import { TownhallContext } from '@app/contexts/Townhall';
 import useUser from './useUser';
 
 export default function useTownhall() {

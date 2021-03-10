@@ -3,12 +3,12 @@ import React from 'react';
 import faker from 'faker';
 // import jwt from 'jsonwebtoken';
 
-import { DeviceContext } from 'contexts/Device';
+import { DeviceContext } from '@app/contexts/Device';
 
 import Component, { Props as EmailPreviewProps } from './EmailPreview';
 
 export default {
-    title: 'Components/Invite/Email Preview',
+    title: '@app/components/Invite/Email Preview',
     component: Component,
     argTypes: {
         DeviceType: {

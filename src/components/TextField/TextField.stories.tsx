@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/react';
 import Component, { Props } from './TextField';
 
 export default {
-    title: 'Components/TextField',
+    title: '@app/components/TextField',
     component: Component,
     parameters: {
         layout: 'centered',

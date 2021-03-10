@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Redirect from 'domains/Logical/Redirect';
-import useEndpoint from 'hooks/useEndpoint';
-import Loader from 'components/Loader';
-import useUser from 'hooks/useUser';
-import { clear } from 'utils/storage';
-import { logout } from 'domains/Auth/api';
+import Redirect from '@app/domains/Logical/Redirect';
+import useEndpoint from '@app/hooks/useEndpoint';
+import Loader from '@app/components/Loader';
+import useUser from '@app/hooks/useUser';
+import { clear } from '@app/utils/storage';
+import { logout } from '@app/domains/Auth/api';
 
 /** Logs the user out by redirecting to /login after clearing the window's local storage
  *  @category Domains/Auth

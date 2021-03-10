@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react';
 import Component from '.';
 
 export default {
-    title: 'Domains/Townhall/Townhall List',
+    title: '@app/domains/Townhall/Townhall List',
     decorators: [
         (MyStory) => (
             <div style={{ flex: 1, padding: 60 }}>

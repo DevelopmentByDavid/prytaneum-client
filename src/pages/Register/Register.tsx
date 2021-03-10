@@ -3,8 +3,8 @@ import { Avatar, Typography, Grid, Paper } from '@material-ui/core';
 import AccountCirlceOutline from '@material-ui/icons/AccountCircleOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
-import RegisterForm from 'domains/Auth/RegisterForm';
-import history from 'utils/history';
+import RegisterForm from '@app/domains/Auth/RegisterForm';
+import history from '@app/utils/history';
 
 const useStyles = makeStyles((theme) => ({
     root: {

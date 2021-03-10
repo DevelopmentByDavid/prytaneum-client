@@ -4,7 +4,7 @@ import faker from 'faker';
 
 import Component from './SettingsMenu';
 
-export default { title: 'Components/SettingsMenu' };
+export default { title: '@app/components/SettingsMenu' };
 
 const content2 = (
     <List>

@@ -13,10 +13,13 @@
         "isolatedModules": true,
         "noEmit": true,
         "jsx": "react",
-        "baseUrl": "src"
+        "baseUrl": ".",
+        "paths": {
+            "@app/*": ["src/*"]
+        }
     },
     "include": ["src"],
-    "exclude": ["node_modules", "**/*.stories.*", "**/serviceWorker.ts", "**/*.jpg"],
+    "exclude": ["node_modules", "**/*.test.*", "**/*.stories.*", "**/serviceWorker.ts", "**/*.jpg"],
     "typedocOptions": {
         "mode": "modules",
         "out": "docs",

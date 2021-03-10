@@ -17,10 +17,10 @@ import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import type { Moderator } from 'prytaneum-typings';
 
-import useSnack from 'hooks/useSnack';
-import ResponsiveDialog from 'components/ResponsiveDialog';
-import TextField from 'components/TextField';
-import ConfirmationDialog from 'components/ConfirmationDialog';
+import useSnack from '@app/hooks/useSnack';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+import TextField from '@app/components/TextField';
+import ConfirmationDialog from '@app/components/ConfirmationDialog';
 import { Props } from './utils';
 
 function AddModeratorForm({

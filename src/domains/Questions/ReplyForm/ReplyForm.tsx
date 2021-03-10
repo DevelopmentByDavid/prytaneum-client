@@ -8,16 +8,16 @@ import type {
     ReplyForm as FormType,
 } from 'prytaneum-typings';
 
-import TextField from 'components/TextField';
-import Form from 'components/Form';
-import FormTitle from 'components/FormTitle';
-import FormContent from 'components/FormContent';
-import FormActions from 'components/FormActions';
-import LoadingButton from 'components/LoadingButton';
-import useSnack from 'hooks/useSnack';
-import useForm from 'hooks/useForm';
-import useEndpoint from 'hooks/useEndpoint';
-import useTownhall from 'hooks/useTownhall';
+import TextField from '@app/components/TextField';
+import Form from '@app/components/Form';
+import FormTitle from '@app/components/FormTitle';
+import FormContent from '@app/components/FormContent';
+import FormActions from '@app/components/FormActions';
+import LoadingButton from '@app/components/LoadingButton';
+import useSnack from '@app/hooks/useSnack';
+import useForm from '@app/hooks/useForm';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useTownhall from '@app/hooks/useTownhall';
 import QuestionCard from '../QuestionCard';
 import { createReply } from '../api';
 

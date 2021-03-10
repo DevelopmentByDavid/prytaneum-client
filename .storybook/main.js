@@ -28,7 +28,7 @@ module.exports = {
                 }),
                 {}
             ),
-            'hooks/useSocketio': path.resolve(__dirname, '../src/hooks/__mocks__/useSocketio'),
+            '@app/hooks/useSocketio': path.resolve(__dirname, '../src/hooks/__mocks__/useSocketio'),
         };
         config.module.rules.push({
             test: /\.[tj]sx?$/,

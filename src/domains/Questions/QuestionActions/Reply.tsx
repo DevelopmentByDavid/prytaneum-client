@@ -3,7 +3,7 @@ import { Button, DialogContent } from '@material-ui/core';
 import ReplyIcon from '@material-ui/icons/Reply';
 import type { Question } from 'prytaneum-typings';
 
-import ResponsiveDialog from 'components/ResponsiveDialog';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
 import ReplyForm from '../ReplyForm';
 
 interface Props {

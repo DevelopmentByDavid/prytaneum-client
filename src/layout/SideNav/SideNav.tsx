@@ -10,7 +10,7 @@ import { AnimateSharedLayout /* motion */ } from 'framer-motion';
 import type { ClientSafeUser } from 'prytaneum-typings';
 import { Update, State } from 'history';
 
-import history from 'utils/history';
+import history from '@app/utils/history';
 import { StyledSubheader, StyledDivider, StyledListItemIcon, StyledListItem } from './StyledComponents';
 import MovingBg from './MovingBg';
 

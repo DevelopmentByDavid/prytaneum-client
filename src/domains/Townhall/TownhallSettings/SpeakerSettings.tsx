@@ -17,8 +17,8 @@ import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import type { Speaker } from 'prytaneum-typings';
-import ResponsiveDialog from 'components/ResponsiveDialog';
-import ConfirmationDialog from 'components/ConfirmationDialog';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+import ConfirmationDialog from '@app/components/ConfirmationDialog';
 import SpeakerForm from '../../Speaker/SpeakerForm';
 
 import { Props, areEqual } from './utils';

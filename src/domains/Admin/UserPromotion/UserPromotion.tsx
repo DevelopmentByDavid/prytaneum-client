@@ -7,8 +7,8 @@ import type { User, Roles } from 'prytaneum-typings';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Paper, Grid, Switch, Typography } from '@material-ui/core';
 
-import useEndpoint from 'hooks/useEndpoint';
-import { promoteUser } from 'domains/Admin/api/api';
+import useEndpoint from '@app/hooks/useEndpoint';
+import { promoteUser } from '@app/domains/Admin/api/api';
 
 const useStyles = makeStyles((theme) => ({
     root: {

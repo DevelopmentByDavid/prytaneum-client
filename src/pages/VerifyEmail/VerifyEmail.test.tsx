@@ -4,13 +4,13 @@ import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
 
-import axios from 'utils/axios';
-import history from 'utils/history';
+import axios from '@app/utils/axios';
+import history from '@app/utils/history';
 
 import VerifyEmail from './VerifyEmail';
 
-jest.mock('hooks/useSnack');
-jest.mock('utils/axios');
+jest.mock('@app/hooks/useSnack');
+jest.mock('@app/utils/axios');
 
 describe('VerifyEmail', () => {
     let container: HTMLDivElement | null = null;

@@ -3,9 +3,9 @@ import type { Question as QuestionType } from 'prytaneum-typings';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from '@reduxjs/toolkit';
 
-import useSocketio, { SocketFn } from 'hooks/useSocketio';
-import useEndpoint from 'hooks/useEndpoint';
-import { QuestionActions } from 'reducers';
+import useSocketio, { SocketFn } from '@app/hooks/useSocketio';
+import useEndpoint from '@app/hooks/useEndpoint';
+import { QuestionActions } from '@app/reducers';
 
 import { getQuestions } from '../api';
 

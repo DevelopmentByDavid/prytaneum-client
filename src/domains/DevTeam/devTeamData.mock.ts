@@ -1,5 +1,5 @@
-import teamMember1 from 'assets/teamMembers/teamMember1.jpg';
-import { ReferenceNames, Team, TeamMember } from 'types';
+import teamMember1 from '@app/assets/teamMembers/teamMember1.jpg';
+import { ReferenceNames, Team, TeamMember } from '@app/types';
 import faker from 'faker';
 
 const devTeam = [

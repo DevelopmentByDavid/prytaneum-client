@@ -2,10 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import type { ClientSafeUser } from 'prytaneum-typings';
 
-import Loader from 'components/Loader';
-import useUser from 'hooks/useUser';
-import useEndpoint from 'hooks/useEndpoint';
-import useQuery from 'hooks/useQuery';
+import Loader from '@app/components/Loader';
+import useUser from '@app/hooks/useUser';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useQuery from '@app/hooks/useQuery';
 
 function loginWithToken(query?: string) {
     let url = '/api/users/introspect';

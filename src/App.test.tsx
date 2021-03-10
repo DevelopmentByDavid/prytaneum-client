@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { init } from 'utils/storage';
+import { init } from '@app/utils/storage';
 import App from './App';
 
 beforeAll(init);

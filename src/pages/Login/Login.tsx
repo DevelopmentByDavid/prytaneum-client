@@ -3,9 +3,9 @@ import { Grid, Typography, Avatar, Paper } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import { makeStyles } from '@material-ui/core/styles';
 
-import LoginForm from 'domains/Auth/LoginForm';
-import useIsMounted from 'hooks/useIsMounted';
-import useUser from 'hooks/useUser';
+import LoginForm from '@app/domains/Auth/LoginForm';
+import useIsMounted from '@app/hooks/useIsMounted';
+import useUser from '@app/hooks/useUser';
 
 const useStyles = makeStyles((theme) => ({
     root: {

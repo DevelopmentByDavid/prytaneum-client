@@ -5,7 +5,7 @@ import faker from 'faker';
 import Component, { Section, Datum } from '.';
 
 export default {
-    title: 'Components/SectionList',
+    title: '@app/components/SectionList',
     component: Component,
 };
 

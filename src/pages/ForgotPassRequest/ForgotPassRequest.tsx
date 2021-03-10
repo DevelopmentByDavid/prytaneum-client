@@ -3,8 +3,8 @@ import { Typography, Avatar, Paper, Grid } from '@material-ui/core';
 import RefreshIcon from '@material-ui/icons/VpnKey';
 import { makeStyles } from '@material-ui/core/styles';
 
-import history from 'utils/history';
-import ForgotPassRequestForm from 'domains/Auth/ForgotPassRequest';
+import history from '@app/utils/history';
+import ForgotPassRequestForm from '@app/domains/Auth/ForgotPassRequest';
 
 const useStyles = makeStyles((theme) => ({
     root: {

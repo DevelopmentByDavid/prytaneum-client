@@ -3,7 +3,7 @@ import React from 'react';
 import { Badge } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import ChipTab from 'components/ChipTab';
+import ChipTab from '@app/components/ChipTab';
 import { Panes } from '../types';
 
 const useStyles = makeStyles((theme) => ({

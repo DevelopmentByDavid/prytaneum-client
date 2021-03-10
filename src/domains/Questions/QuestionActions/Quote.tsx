@@ -3,7 +3,7 @@ import { Button, DialogContent } from '@material-ui/core';
 import QuoteIcon from '@material-ui/icons/FormatQuoteOutlined';
 import type { Question } from 'prytaneum-typings';
 
-import ResponsiveDialog from 'components/ResponsiveDialog';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
 import QuestionForm from '../QuestionForm';
 
 interface Props {

@@ -4,8 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import type { Question } from 'prytaneum-typings';
 import { useSelector } from 'react-redux';
 
-import ResponsiveDialog from 'components/ResponsiveDialog';
-import useUser from 'hooks/useUser';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+import useUser from '@app/hooks/useUser';
 import QuestionLabels from '../QuestionLabels';
 import { Like, QueueButton, Quote /* Reply */ } from '../QuestionActions';
 import QuestionCard from '../QuestionCard';

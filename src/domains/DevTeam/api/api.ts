@@ -1,6 +1,6 @@
 import axios from 'axios';
-import errors from 'utils/errors';
-import { Team, TeamMember } from 'types';
+import errors from '@app/utils/errors';
+import { Team, TeamMember } from '@app/types';
 
 export function getDevTeams() {
     return axios.get<{ devTeam: Team[] }>('/api/dev-team/get-teams');

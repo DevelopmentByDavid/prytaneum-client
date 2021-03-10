@@ -3,12 +3,12 @@ import { Card, CardContent, CardHeader, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import type { User } from 'prytaneum-typings';
 
-import ListFilter, { Accessors, useFilters } from 'components/ListFilter';
-import ListOverflow from 'components/ListOverflow';
-import { FilterFunc } from 'utils/filters';
-import useEndpoint from 'hooks/useEndpoint';
-import API from 'domains/Admin/api';
-import Loader from 'components/Loader';
+import ListFilter, { Accessors, useFilters } from '@app/components/ListFilter';
+import ListOverflow from '@app/components/ListOverflow';
+import { FilterFunc } from '@app/utils/filters';
+import useEndpoint from '@app/hooks/useEndpoint';
+import API from '@app/domains/Admin/api';
+import Loader from '@app/components/Loader';
 
 const useStyles = makeStyles((theme) => ({
     root: {

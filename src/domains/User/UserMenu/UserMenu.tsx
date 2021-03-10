@@ -19,8 +19,8 @@ import Settings from '@material-ui/icons/Settings';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
-import useUser from 'hooks/useUser';
-import { handleNavigation } from 'utils/history';
+import useUser from '@app/hooks/useUser';
+import { handleNavigation } from '@app/utils/history';
 
 const useStyles = makeStyles((theme) => ({
     button: {

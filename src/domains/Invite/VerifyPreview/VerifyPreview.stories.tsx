@@ -5,7 +5,7 @@ import { makeGenFn } from 'prytaneum-typings';
 import Component from './VerifyPreview';
 
 export default {
-    title: 'Components/Invite/Verify Preview',
+    title: '@app/components/Invite/Verify Preview',
     component: Component,
 };
 

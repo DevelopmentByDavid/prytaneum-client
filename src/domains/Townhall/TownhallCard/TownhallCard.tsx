@@ -10,8 +10,8 @@ import {
     ListItemText,
 } from '@material-ui/core';
 
-import { formatDate } from 'utils/format';
-import useTownhall from 'hooks/useTownhall';
+import { formatDate } from '@app/utils/format';
+import useTownhall from '@app/hooks/useTownhall';
 
 export default function TownhallCard() {
     const [townhall] = useTownhall();

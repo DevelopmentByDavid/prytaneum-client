@@ -4,10 +4,10 @@ import { Grid, useMediaQuery } from '@material-ui/core';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { motion } from 'framer-motion';
 
-import Fab from 'components/Fab';
-import VideoPlayer from 'components/VideoPlayer';
-import TownhallPanes from 'domains/Townhall/TownhallPanes';
-import useTownhall from 'hooks/useTownhall';
+import Fab from '@app/components/Fab';
+import VideoPlayer from '@app/components/VideoPlayer';
+import TownhallPanes from '@app/domains/Townhall/TownhallPanes';
+import useTownhall from '@app/hooks/useTownhall';
 
 const useStyles = makeStyles((theme) => ({
     root: {

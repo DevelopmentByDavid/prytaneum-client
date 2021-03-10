@@ -6,12 +6,12 @@ import type { Townhall, TownhallSettings } from 'prytaneum-typings';
 import { connect } from 'react-redux';
 import clsx from 'clsx';
 
-import TabPanel, { TabPanels } from 'components/TabPanel';
-import QuestionFeed from 'domains/Questions/QuestionFeed';
-import QuestionQueue from 'domains/Questions/QuestionQueue';
-import AskQuestion from 'domains/Questions/AskQuestion';
-import QuestionCarousel from 'domains/Questions/QuestionCarousel';
-import useTownhall from 'hooks/useTownhall';
+import TabPanel, { TabPanels } from '@app/components/TabPanel';
+import QuestionFeed from '@app/domains/Questions/QuestionFeed';
+import QuestionQueue from '@app/domains/Questions/QuestionQueue';
+import AskQuestion from '@app/domains/Questions/AskQuestion';
+import QuestionCarousel from '@app/domains/Questions/QuestionCarousel';
+import useTownhall from '@app/hooks/useTownhall';
 import Breakout from '../Breakout';
 import StyledTab, { Props as StyledTabProps } from './StyledTab';
 import InfoCard from '../InfoCard';

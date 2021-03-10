@@ -4,7 +4,7 @@ import { makeSpeaker } from 'prytaneum-typings';
 
 import Component from './SpeakerCard';
 
-export default { title: 'Domains/Speaker/Speaker Card', parameters: { layout: 'centered' } } as Meta;
+export default { title: '@app/domains/Speaker/Speaker Card', parameters: { layout: 'centered' } } as Meta;
 
 export function Basic() {
     const { name, title, description, picture } = makeSpeaker();

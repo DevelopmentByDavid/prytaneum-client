@@ -1,7 +1,7 @@
 import React from 'react';
 
-import history from 'utils/history';
-import VerifyEmailComponent from 'domains/Auth/VerifyEmail';
+import history from '@app/utils/history';
+import VerifyEmailComponent from '@app/domains/Auth/VerifyEmail';
 
 interface Props {
     userId: string;

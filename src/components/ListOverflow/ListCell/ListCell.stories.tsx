@@ -2,7 +2,7 @@ import React from 'react';
 
 import ListCell from './ListCell';
 
-export default { title: 'Components/ListOverflow/ListCell' };
+export default { title: '@app/components/ListOverflow/ListCell' };
 
 const userCell = {
     primary: 'Francisco Gallego',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { QueryContext } from 'contexts/Query';
+import { QueryContext } from '@app/contexts/Query';
 
 export default function useQuery() {
     const query = React.useContext(QueryContext);

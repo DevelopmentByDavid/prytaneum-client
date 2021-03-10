@@ -4,9 +4,9 @@ import { EventEmitter } from 'events';
 import { makeQuestion, makeUser, makeTownhall } from 'prytaneum-typings';
 import { Grid } from '@material-ui/core';
 
-import UserProvider from 'contexts/User';
-import FixtureSocket from 'mock/Fixture.socket';
-import TownhallProvider from 'contexts/Townhall';
+import UserProvider from '@app/contexts/User';
+import FixtureSocket from '@app/mock/Fixture.socket';
+import TownhallProvider from '@app/contexts/Townhall';
 import QuestionFeed from './QuestionFeed';
 
 export { QuestionFeedLoading as Loading } from './QuestionFeed';
@@ -24,7 +24,7 @@ function sendMessage(num?: number) {
 }
 
 export default {
-    title: 'Domains/Questions/Question Feed',
+    title: '@app/domains/Questions/Question Feed',
     decorators: [
         (MyStory) => (
             <div style={{ flex: 1, padding: 60 }}>

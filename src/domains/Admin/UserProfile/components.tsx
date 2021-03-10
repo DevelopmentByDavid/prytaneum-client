@@ -14,9 +14,9 @@ import {
 } from '@material-ui/core';
 import type { User } from 'prytaneum-typings';
 
-import { formatDate } from 'utils/format';
-import SettingsItem from 'components/SettingsItem';
-import SettingsList from 'components/SettingsList';
+import { formatDate } from '@app/utils/format';
+import SettingsItem from '@app/components/SettingsItem';
+import SettingsList from '@app/components/SettingsList';
 
 const useMiniStyles = makeStyles((theme) => ({
     image: {

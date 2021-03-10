@@ -9,7 +9,7 @@ import { makeFeedbackReport } from '../reportMaker.mock';
 import FormBase from './FormBase';
 import * as API from '../api/api'; // babel issues ref: https://stackoverflow.com/questions/53162001/typeerror-during-jests-spyon-cannot-set-property-getrequest-of-object-which
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 describe('CreateReportRequest', () => {
     const dummyFeedbackReport = makeFeedbackReport();

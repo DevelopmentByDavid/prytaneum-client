@@ -9,9 +9,9 @@ import {
 import Container from '@material-ui/core/Container';
 import { makeStyles, Theme } from '@material-ui/core/styles';
 
-import ResponsiveDialog from 'components/ResponsiveDialog';
-import ReportSummary from 'domains/Feedback/ReportSummary';
-import { formatDate } from 'utils/format';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+import ReportSummary from '@app/domains/Feedback/ReportSummary';
+import { formatDate } from '@app/utils/format';
 import { FeedbackReport, BugReport } from '../types';
 
 type Report = FeedbackReport | BugReport;

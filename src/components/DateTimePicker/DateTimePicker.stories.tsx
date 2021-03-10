@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import Component from './DateTimePicker';
 
 export default {
-    title: 'Components/DateTimePicker',
+    title: '@app/components/DateTimePicker',
     component: Component,
     parameters: {
         layout: 'centered',

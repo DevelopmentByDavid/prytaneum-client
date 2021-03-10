@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 import { AxiosRequestConfig } from 'axios';
-import axios from 'utils/axios';
-import errors from 'utils/errors';
+import axios from '@app/utils/axios';
+import errors from '@app/utils/errors';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import faker from 'faker';
 import API from './index';

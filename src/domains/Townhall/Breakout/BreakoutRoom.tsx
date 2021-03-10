@@ -13,14 +13,14 @@ import {
     deleteChatMessage,
     readChatMessages,
     breakoutEnd,
-} from 'reducers';
-import useSocketio, { SocketFn } from 'hooks/useSocketio';
-import useEndpoint from 'hooks/useEndpoint';
-import useTownhall from 'hooks/useTownhall';
-import useUser from 'hooks/useUser';
-import Chat from 'components/Chat';
-import Loader from 'components/Loader';
-import ChatMessage from 'components/ChatMessage';
+} from '@app/reducers';
+import useSocketio, { SocketFn } from '@app/hooks/useSocketio';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useTownhall from '@app/hooks/useTownhall';
+import useUser from '@app/hooks/useUser';
+import Chat from '@app/components/Chat';
+import Loader from '@app/components/Loader';
+import ChatMessage from '@app/components/ChatMessage';
 import BreakoutList from './BreakoutList';
 import { createChatMessage, getChatmessages, endBreakout } from '../api';
 

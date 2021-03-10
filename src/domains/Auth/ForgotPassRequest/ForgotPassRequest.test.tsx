@@ -7,7 +7,7 @@ import { AxiosResponse } from 'axios';
 import ForgotPassRequest from './ForgotPassRequest';
 import API from '../api';
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 describe('ForgotPassRequest', () => {
     let container: HTMLDivElement | null = null;

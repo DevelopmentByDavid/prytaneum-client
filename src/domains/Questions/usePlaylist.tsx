@@ -10,10 +10,10 @@ import {
     playlistInit,
     remoteDecrementQueue,
     remoteIncrementQueue,
-} from 'reducers';
+} from '@app/reducers';
 
-import useSocketio, { SocketFn } from 'hooks/useSocketio';
-import useTownhall from 'hooks/useTownhall';
+import useSocketio, { SocketFn } from '@app/hooks/useSocketio';
+import useTownhall from '@app/hooks/useTownhall';
 
 export default function usePlaylist() {
     const [townhall] = useTownhall();

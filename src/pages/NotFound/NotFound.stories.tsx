@@ -3,7 +3,7 @@ import { Meta } from '@storybook/react';
 import Component from './NotFound';
 
 export default {
-    title: 'Pages/Not Found',
+    title: '@app/pages/Not Found',
     component: Component,
 } as Meta;
 

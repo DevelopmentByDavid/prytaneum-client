@@ -3,12 +3,12 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { makeTownhall, makeUser, User } from 'prytaneum-typings';
 
-import TownhallProvider from 'contexts/Townhall';
-import UserProvider from 'contexts/User';
+import TownhallProvider from '@app/contexts/Townhall';
+import UserProvider from '@app/contexts/User';
 import AskQuestion from './AskQuestion';
 
 export default {
-    title: 'Domains/Questions/Ask Question',
+    title: '@app/domains/Questions/Ask Question',
     component: AskQuestion,
     parameters: { layout: 'centered' },
     decorators: [

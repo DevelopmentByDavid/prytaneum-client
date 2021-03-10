@@ -3,11 +3,11 @@ import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import type { Speaker } from 'prytaneum-typings';
 
-import Form from 'components/Form';
-import FormContent from 'components/FormContent';
-import FormActions from 'components/FormActions';
-import TextField from 'components/TextField';
-import useForm from 'hooks/useForm';
+import Form from '@app/components/Form';
+import FormContent from '@app/components/FormContent';
+import FormActions from '@app/components/FormActions';
+import TextField from '@app/components/TextField';
+import useForm from '@app/hooks/useForm';
 
 interface Props {
     value?: Speaker;

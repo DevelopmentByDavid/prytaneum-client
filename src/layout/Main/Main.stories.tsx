@@ -5,7 +5,7 @@ import Main from '.';
 import AppBar from '../AppBar';
 import Page from '../Page';
 
-export default { title: 'Layout/Main' };
+export default { title: '@app/layout/Main' };
 
 export function Basic() {
     return (

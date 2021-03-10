@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/indent */
 import React from 'react';
 
-import { search as utilSearch, applyFilters, FilterFunc } from 'utils/filters';
+import { search as utilSearch, applyFilters, FilterFunc } from '@app/utils/filters';
 
 export type Accessors<T> = (arg: T) => string;
 

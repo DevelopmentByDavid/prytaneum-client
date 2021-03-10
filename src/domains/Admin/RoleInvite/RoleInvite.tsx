@@ -10,10 +10,10 @@ import {
 import { makeStyles, Theme } from '@material-ui/core/styles';
 import type { Roles } from 'prytaneum-typings';
 
-import Select from 'components/Select';
-import CopyText from 'components/CopyText';
-import LoadingButton from 'components/LoadingButton';
-import useEndpoint from 'hooks/useEndpoint';
+import Select from '@app/components/Select';
+import CopyText from '@app/components/CopyText';
+import LoadingButton from '@app/components/LoadingButton';
+import useEndpoint from '@app/hooks/useEndpoint';
 import api from '../api';
 
 const useStyles = makeStyles((theme: Theme) => ({

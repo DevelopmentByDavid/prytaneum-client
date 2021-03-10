@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
-import ThemeProviderContext from 'contexts/Theme';
+import ThemeProviderContext from '@app/contexts/Theme';
 import { makeUser } from 'prytaneum-typings';
 
-import UserProvider from 'contexts/User';
+import UserProvider from '@app/contexts/User';
 import Register from './Register';
 
-jest.mock('hooks/useSnack');
-jest.mock('utils/axios');
+jest.mock('@app/hooks/useSnack');
+jest.mock('@app/utils/axios');
 
 describe('Register', () => {
     let container: HTMLDivElement | null = null;

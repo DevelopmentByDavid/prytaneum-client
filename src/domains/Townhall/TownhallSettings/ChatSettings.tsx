@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Collapse } from '@material-ui/core';
 
-import SettingsList from 'components/SettingsList';
-import SettingsItem from 'components/SettingsItem';
+import SettingsList from '@app/components/SettingsList';
+import SettingsItem from '@app/components/SettingsItem';
 
 import text from './help-text';
 import { Props, areEqual, useStyles } from './utils';

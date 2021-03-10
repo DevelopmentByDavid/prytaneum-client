@@ -4,22 +4,22 @@ import PropTypes from 'prop-types';
 import type { User } from 'prytaneum-typings';
 import { motion } from 'framer-motion';
 
-import useEndpoint from 'hooks/useEndpoint';
-import { getUser } from 'domains/Admin/api/api';
+import useEndpoint from '@app/hooks/useEndpoint';
+import { getUser } from '@app/domains/Admin/api/api';
 
 import { Grid, Paper, Menu, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
-import SettingsMenu, { AccordionData } from 'components/SettingsMenu';
-import SettingsList from 'components/SettingsList';
-import SettingsItem from 'components/SettingsItem';
-import * as AdminDashboardTypes from 'domains/Admin/types';
-import { userProfileFormat } from 'domains/Admin/helper';
+import SettingsMenu, { AccordionData } from '@app/components/SettingsMenu';
+import SettingsList from '@app/components/SettingsList';
+import SettingsItem from '@app/components/SettingsItem';
+import * as AdminDashboardTypes from '@app/domains/Admin/types';
+import { userProfileFormat } from '@app/domains/Admin/helper';
 
-import Fab from 'components/Fab';
-import Loader from 'components/Loader';
-import { fadeThroughProps } from 'animations/FadeThrough';
+import Fab from '@app/components/Fab';
+import Loader from '@app/components/Loader';
+import { fadeThroughProps } from '@app/animations/FadeThrough';
 import { Tags, MiniProfile, AccountActions } from './components';
 import UserPromotion from '../UserPromotion';
 

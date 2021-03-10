@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '@material-ui/core';
 import ThumbUpIcon from '@material-ui/icons/ThumbUpOutlined';
 
-import useEndpoint from 'hooks/useEndpoint';
+import useEndpoint from '@app/hooks/useEndpoint';
 import { createLike, deleteLike } from '../api';
 
 interface Props {

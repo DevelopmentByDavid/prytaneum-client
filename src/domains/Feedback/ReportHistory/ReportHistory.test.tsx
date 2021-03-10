@@ -7,7 +7,7 @@ import { AxiosResponse } from 'axios';
 import ReportHistory from './ReportHistory';
 import * as API from '../api/api';
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 // TODO: Auth. Mock user Ids
 describe('CreateReportList', () => {

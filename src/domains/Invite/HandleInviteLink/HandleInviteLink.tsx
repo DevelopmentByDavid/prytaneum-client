@@ -2,13 +2,13 @@ import React from 'react';
 // import Grid from '@material-ui/core/Grid';
 // import DialogContent from '@material-ui/core/DialogContent';
 
-// import useEndpoint from 'hooks/useEndpoint';
-// import Dialog, { DialogProps } from 'components/Dialog';
-// import InvalidLink from 'components/InvalidLink';
-// import Loader from 'components/Loader';
-// import history from 'utils/history';
+// import useEndpoint from '@app/hooks/useEndpoint';
+// import Dialog, { DialogProps } from '@app/components/Dialog';
+// import InvalidLink from '@app/components/InvalidLink';
+// import Loader from '@app/components/Loader';
+// import history from '@app/utils/history';
 
-// import { TownhallContext } from 'domains/Townhall/Contexts/Townhall';
+// import { TownhallContext } from '@app/domains/Townhall/Contexts/Townhall';
 
 // import API from '../api';
 

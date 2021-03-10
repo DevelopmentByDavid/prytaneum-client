@@ -3,7 +3,7 @@ import Container from '@material-ui/core/Container';
 
 import Component from './DndList';
 
-export default { title: 'components/Dnd List' };
+export default { title: '@app/components/Dnd List' };
 
 export function Basic() {
     return (

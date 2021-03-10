@@ -2,8 +2,8 @@ import React from 'react';
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { handleNavigation } from 'utils/history';
-import useUser from 'hooks/useUser';
+import { handleNavigation } from '@app/utils/history';
+import useUser from '@app/hooks/useUser';
 
 // function formatTitle(str: string | undefined): string | undefined {
 //     if (!str) {

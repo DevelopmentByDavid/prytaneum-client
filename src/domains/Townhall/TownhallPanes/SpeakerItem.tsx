@@ -3,7 +3,7 @@ import React from 'react';
 import { Dialog, Avatar, ListItem, ListItemText, ListItemAvatar } from '@material-ui/core';
 import type { Speaker } from 'prytaneum-typings';
 
-import SpeakerCard from 'domains/Speaker/SpeakerCard';
+import SpeakerCard from '@app/domains/Speaker/SpeakerCard';
 
 interface Props {
     speaker: Speaker;

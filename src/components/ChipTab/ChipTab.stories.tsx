@@ -2,10 +2,10 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 import { Tabs } from '@material-ui/core';
 
-import Main from 'layout/Main';
+import Main from '@app/layout/Main';
 import Component from './Tab';
 
-export default { title: 'Components/Chip Tab', parameters: { layout: 'centered' } } as Meta;
+export default { title: '@app/components/Chip Tab', parameters: { layout: 'centered' } } as Meta;
 
 export function ChipTab() {
     const [state, setState] = React.useState(1);

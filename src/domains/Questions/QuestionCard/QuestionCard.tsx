@@ -16,7 +16,7 @@ import {
 import { useTheme } from '@material-ui/core/styles';
 import { Skeleton } from '@material-ui/lab';
 
-import { formatDate } from 'utils/format';
+import { formatDate } from '@app/utils/format';
 import QuestionStats from './QuestionStats';
 
 export interface Props {

@@ -5,10 +5,10 @@ import { RouteResultSync } from 'universal-router/sync';
 import { Update, State } from 'history';
 import { AnimatePresence } from 'framer-motion';
 
-// import Container from 'layout/Page';
-import history from 'utils/history';
-import Layout, { Props as LayoutProps } from 'layout';
-import useRouter from 'hooks/useRouter';
+// import Container from '@app/layout/Page';
+import history from '@app/utils/history';
+import Layout, { Props as LayoutProps } from '@app/layout';
+import useRouter from '@app/hooks/useRouter';
 
 import { routes, ActionResult, CustomLayout } from './utils';
 

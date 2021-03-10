@@ -4,9 +4,9 @@ import { Meta, Story } from '@storybook/react';
 import { EventEmitter } from 'events';
 import { makeQuestion, makeGenFn, makeUser } from 'prytaneum-typings';
 
-import SocketFixture from 'mock/Fixture.socket';
-import UserProvider from 'contexts/User';
-import TownhallProvider from 'contexts/Townhall';
+import SocketFixture from '@app/mock/Fixture.socket';
+import UserProvider from '@app/contexts/User';
+import TownhallProvider from '@app/contexts/Townhall';
 import QuestionQueue from './QuestionQueue';
 import QueuePreview, { Props as PreviewProps } from './QueuePreview';
 
@@ -33,7 +33,7 @@ function sendQueue(num?: number) {
 }
 
 export default {
-    title: 'Domains/Questions/Question Queue',
+    title: '@app/domains/Questions/Question Queue',
     decorators: [
         (MyStory) => (
             <div style={{ maxWidth: 500, width: '100%', height: '100%' }}>

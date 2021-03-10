@@ -1,11 +1,11 @@
 import React from 'react';
 import faker from 'faker';
 
-import { ReferenceNames } from 'types';
+import { ReferenceNames } from '@app/types';
 import Component from '.';
 
 export default {
-    title: 'Components/Team',
+    title: '@app/components/Team',
     component: Component,
 };
 

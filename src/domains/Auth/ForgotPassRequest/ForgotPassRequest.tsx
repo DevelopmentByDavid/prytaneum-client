@@ -4,9 +4,9 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 
-import TextField from 'components/TextField';
-import useSnack from 'hooks/useSnack';
-import useEndpoint from 'hooks/useEndpoint';
+import TextField from '@app/components/TextField';
+import useSnack from '@app/hooks/useSnack';
+import useEndpoint from '@app/hooks/useEndpoint';
 
 import API from '../api';
 

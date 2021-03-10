@@ -3,7 +3,7 @@ import React from 'react';
 import Component from './Loader';
 
 export default {
-    title: 'Components/Loader',
+    title: '@app/components/Loader',
     component: Component,
 };
 

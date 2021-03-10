@@ -3,10 +3,10 @@ import { Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 // TODO: notifications
-// import UserNotifications from 'domains/User/UserNotifications';
-import UserMenu from 'domains/User/UserMenu';
+// import UserNotifications from '@app/domains/User/UserNotifications';
+import UserMenu from '@app/domains/User/UserMenu';
 // TODO: user theme that doesn't make tabpanels disappear, interesting problem
-// import UserTheme from 'domains/User/UserTheme';
+// import UserTheme from '@app/domains/User/UserTheme';
 import Title from './Title';
 
 const useStyles = makeStyles((theme) => ({

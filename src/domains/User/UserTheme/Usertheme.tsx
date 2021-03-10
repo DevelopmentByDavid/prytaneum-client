@@ -2,7 +2,7 @@ import React from 'react';
 import InvertColorsIcon from '@material-ui/icons/InvertColors';
 import { IconButton, Tooltip, IconButtonProps } from '@material-ui/core';
 
-import { ThemeSelector } from 'contexts/Theme';
+import { ThemeSelector } from '@app/contexts/Theme';
 
 export default function UserTheme({
     className,

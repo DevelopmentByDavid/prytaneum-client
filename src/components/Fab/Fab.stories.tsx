@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add';
 import Component from './Fab';
 
 export default {
-    title: 'Components/Fab',
+    title: '@app/components/Fab',
     component: Component,
     argTypes: {
         onClick: { onClick: 'fab clicked' },

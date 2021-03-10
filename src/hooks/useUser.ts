@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { UserContext, UserDispatch } from 'contexts/User';
+import { UserContext, UserDispatch } from '@app/contexts/User';
 
 export default function useUser() {
     const user = React.useContext(UserContext);

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SettingsList from 'components/SettingsList';
-import EditableText from 'components/EditableText';
+import SettingsList from '@app/components/SettingsList';
+import EditableText from '@app/components/EditableText';
 
 import { Props, areEqual } from './utils';
 

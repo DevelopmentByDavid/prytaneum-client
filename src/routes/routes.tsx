@@ -1,33 +1,33 @@
 import React from 'react';
 
-import QueryProvider from 'contexts/Query';
+import QueryProvider from '@app/contexts/Query';
 
-import RegPrompt from 'domains/Auth/RegPrompt';
-import TownhallProvider from 'contexts/Townhall';
-import TownhallSettings from 'domains/Townhall/TownhallSettings';
-import TownhallList from 'pages/TownhallList';
-import TownhallLive from 'pages/TownhallLive';
-import FadeThrough from 'animations/FadeThrough';
-import LoginWithToken from 'domains/Logical/LoginWithToken';
+import RegPrompt from '@app/domains/Auth/RegPrompt';
+import TownhallProvider from '@app/contexts/Townhall';
+import TownhallSettings from '@app/domains/Townhall/TownhallSettings';
+import TownhallList from '@app/pages/TownhallList';
+import TownhallLive from '@app/pages/TownhallLive';
+import FadeThrough from '@app/animations/FadeThrough';
+import LoginWithToken from '@app/domains/Logical/LoginWithToken';
 
-import Dashboard from 'pages/Dashboard';
+import Dashboard from '@app/pages/Dashboard';
 
-import Login from 'pages/Login';
-import Register from 'pages/Register';
-import ForgotPasswordRequest from 'pages/ForgotPassRequest';
-// import ForgotPasswordReset from 'pages/Auth/ForgotPassReset';
-import Logout from 'pages/Logout';
+import Login from '@app/pages/Login';
+import Register from '@app/pages/Register';
+import ForgotPasswordRequest from '@app/pages/ForgotPassRequest';
+// import ForgotPasswordReset from '@app/pages/Auth/ForgotPassReset';
+import Logout from '@app/pages/Logout';
 
-import NotFound from 'pages/NotFound';
+import NotFound from '@app/pages/NotFound';
 
-import InviteForm from 'domains/Invite/InviteForm';
+import InviteForm from '@app/domains/Invite/InviteForm';
 
-import UserSettings from 'domains/User/UserSettings';
+import UserSettings from '@app/domains/User/UserSettings';
 
-import RequireLogin from 'domains/Logical/RequireLogin';
-import Redirect from 'domains/Logical/Redirect';
-import RequireRoles from 'domains/Logical/RequireRoles';
-import history from 'utils/history';
+import RequireLogin from '@app/domains/Logical/RequireLogin';
+import Redirect from '@app/domains/Logical/Redirect';
+import RequireRoles from '@app/domains/Logical/RequireRoles';
+import history from '@app/utils/history';
 import { addRoutes, areParamsValid, PrytaneumRoutes, PrytaneumRoute } from './utils';
 
 const notFound: PrytaneumRoute = {

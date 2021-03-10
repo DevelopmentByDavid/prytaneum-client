@@ -5,7 +5,7 @@ import { makeQuestion } from 'prytaneum-typings';
 import Component from '.';
 
 export default {
-    title: 'Domains/Questions/Question Thread',
+    title: '@app/domains/Questions/Question Thread',
     decorators: [
         (Story) => (
             <div style={{ flex: 1, padding: 60 }}>

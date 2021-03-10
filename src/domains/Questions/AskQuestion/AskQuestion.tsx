@@ -4,8 +4,8 @@ import { Button, DialogContent } from '@material-ui/core';
 import QuestionAnswerIcon from '@material-ui/icons/QuestionAnswer';
 import LockIcon from '@material-ui/icons/Lock';
 
-import ResponsiveDialog from 'components/ResponsiveDialog';
-import useUser from 'hooks/useUser';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+import useUser from '@app/hooks/useUser';
 import QuestionForm from '../QuestionForm';
 
 interface Props {

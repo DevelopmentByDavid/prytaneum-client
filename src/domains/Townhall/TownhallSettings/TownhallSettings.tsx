@@ -5,14 +5,14 @@ import ChevronRight from '@material-ui/icons/ChevronRight';
 import SaveIcon from '@material-ui/icons/Save';
 import type { TownhallSettings as SettingsType } from 'prytaneum-typings';
 
-import history, { makeRelativeLink } from 'utils/history';
-import LoadingButton from 'components/LoadingButton';
-import CopyText from 'components/CopyText';
-import Fab from 'components/Fab';
-import useSnack from 'hooks/useSnack';
-import useEndpoint from 'hooks/useEndpoint';
-import SettingsMenu, { AccordionData } from 'components/SettingsMenu';
-import useTownhall from 'hooks/useTownhall';
+import history, { makeRelativeLink } from '@app/utils/history';
+import LoadingButton from '@app/components/LoadingButton';
+import CopyText from '@app/components/CopyText';
+import Fab from '@app/components/Fab';
+import useSnack from '@app/hooks/useSnack';
+import useEndpoint from '@app/hooks/useEndpoint';
+import SettingsMenu, { AccordionData } from '@app/components/SettingsMenu';
+import useTownhall from '@app/hooks/useTownhall';
 
 import TownhallForm from '../TownhallForm';
 import ChatSettings from './ChatSettings';

@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Component from './LoadingButton';
 
 export default {
-    title: 'Components/Loading Button',
+    title: '@app/components/Loading Button',
     component: Component,
 };
 

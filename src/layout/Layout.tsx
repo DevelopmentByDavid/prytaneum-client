@@ -4,7 +4,7 @@ import { Grid, useMediaQuery, Drawer, IconButton, ContainerProps } from '@materi
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 
-import useUser from 'hooks/useUser';
+import useUser from '@app/hooks/useUser';
 import Main from './Main';
 import Page from './Page';
 import AppBar, { Public, LoggedIn } from './AppBar';

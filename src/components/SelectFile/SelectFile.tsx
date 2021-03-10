@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import UploadField from 'components/UploadField';
+import UploadField from '@app/components/UploadField';
 
 interface Props {
     initialState: File;

@@ -5,12 +5,12 @@ import faker from 'faker';
 import { EventEmitter } from 'events';
 import { makeQuestion, makeChatMessage, makeUser, makeTownhall, Townhall, User } from 'prytaneum-typings';
 
-import FixtureSocket from 'mock/Fixture.socket';
-import Page from 'layout/Page';
-import AppBar from 'layout/AppBar';
-import Main from 'layout/Main';
-import UserProvider from 'contexts/User';
-import TownhallProvider from 'contexts/Townhall';
+import FixtureSocket from '@app/mock/Fixture.socket';
+import Page from '@app/layout/Page';
+import AppBar from '@app/layout/AppBar';
+import Main from '@app/layout/Main';
+import UserProvider from '@app/contexts/User';
+import TownhallProvider from '@app/contexts/Townhall';
 import Component from './TownhallLive';
 
 function sendQuestions(num: number, emitter: SocketIOClient.Socket) {
@@ -43,7 +43,7 @@ baseTownhall.form.description = 'Townhall Description';
 const emitter = (new EventEmitter() as unknown) as SocketIOClient.Socket;
 
 export default {
-    title: 'Pages/Townhall Live',
+    title: '@app/pages/Townhall Live',
     component: Component,
     argTypes: {},
     parameters: {

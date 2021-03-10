@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import { Button, Grid } from '@material-ui/core';
 import type { Question as QuestionType, QuestionForm as FormType } from 'prytaneum-typings';
 
-import useTownhall from 'hooks/useTownhall';
-import LoadingButton from 'components/LoadingButton';
-import Form from 'components/Form';
-import FormTitle from 'components/FormTitle';
-import FormContent from 'components/FormContent';
-import FormActions from 'components/FormActions';
-import TextField from 'components/TextField';
-import useForm from 'hooks/useForm';
-import useEndpoint from 'hooks/useEndpoint';
-import useSnack from 'hooks/useSnack';
+import useTownhall from '@app/hooks/useTownhall';
+import LoadingButton from '@app/components/LoadingButton';
+import Form from '@app/components/Form';
+import FormTitle from '@app/components/FormTitle';
+import FormContent from '@app/components/FormContent';
+import FormActions from '@app/components/FormActions';
+import TextField from '@app/components/TextField';
+import useForm from '@app/hooks/useForm';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useSnack from '@app/hooks/useSnack';
 import QuestionCard from '../QuestionCard';
 import { createQuestion } from '../api';
 

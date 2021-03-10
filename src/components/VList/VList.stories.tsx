@@ -4,7 +4,7 @@ import { Card, CardContent } from '@material-ui/core';
 
 import VList from './VList';
 
-export default { title: 'Components/VList' };
+export default { title: '@app/components/VList' };
 
 const data = new Array(1000)
     .fill(true)

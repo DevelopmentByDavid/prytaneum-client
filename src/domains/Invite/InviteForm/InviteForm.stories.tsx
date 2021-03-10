@@ -2,14 +2,14 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 import { rest } from 'msw';
 
-import TownhallProvider from 'contexts/Townhall';
-import UserProvider from 'contexts/User';
-import { worker } from 'mock/browser';
+import TownhallProvider from '@app/contexts/Townhall';
+import UserProvider from '@app/contexts/User';
+import { worker } from '@app/mock/browser';
 
 import Component from '.';
 
 export default {
-    title: 'Domains/Invite',
+    title: '@app/domains/Invite',
     component: Component,
     argTypes: {
         Status: {

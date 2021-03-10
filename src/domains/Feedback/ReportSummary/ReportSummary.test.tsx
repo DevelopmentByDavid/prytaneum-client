@@ -9,7 +9,7 @@ import { makeFeedbackReport, makeBugReport } from '../reportMaker.mock';
 import ReportSummary from './ReportSummary';
 import * as API from '../api/api'; // babel issues ref: https://stackoverflow.com/questions/53162001/typeerror-during-jests-spyon-cannot-set-property-getrequest-of-object-which
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 describe('Update report summary', () => {
     let container: HTMLDivElement | null = null;

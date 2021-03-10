@@ -6,9 +6,9 @@ import { useTheme } from '@material-ui/core/styles';
 import { Dispatch } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
-import { QueueActions } from 'reducers';
-import DropArea from 'components/DropArea';
-import useTownhall from 'hooks/useTownhall';
+import { QueueActions } from '@app/reducers';
+import DropArea from '@app/components/DropArea';
+import useTownhall from '@app/hooks/useTownhall';
 import DraggableList from './DraggableList';
 import { updateQueueOrder } from '../api';
 

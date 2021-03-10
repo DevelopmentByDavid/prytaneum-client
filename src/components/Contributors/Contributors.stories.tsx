@@ -2,11 +2,11 @@ import React from 'react';
 import { Meta } from '@storybook/react';
 import faker from 'faker';
 
-import { ReferenceNames } from 'types';
+import { ReferenceNames } from '@app/types';
 import Component from '.';
 
 export default {
-    title: 'Components/Contributors',
+    title: '@app/components/Contributors',
     component: Component,
     parameters: {
         layout: 'centered',

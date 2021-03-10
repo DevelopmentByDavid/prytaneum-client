@@ -6,7 +6,7 @@ import StarIcon from '@material-ui/icons/Star';
 import ChatMessage from './ChatMessage';
 
 export default {
-    title: 'Components/Chat Message',
+    title: '@app/components/Chat Message',
     component: ChatMessage,
     parameters: {
         layout: 'centered',

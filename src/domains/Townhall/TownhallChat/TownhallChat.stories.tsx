@@ -3,9 +3,9 @@ import { Meta, Story } from '@storybook/react';
 import { EventEmitter } from 'events';
 import { makeChatMessage, makeTownhall, makeUser } from 'prytaneum-typings';
 
-import UserProvider from 'contexts/User';
-import TownhallProvider from 'contexts/Townhall';
-import FixtureSocket from 'mock/Fixture.socket';
+import UserProvider from '@app/contexts/User';
+import TownhallProvider from '@app/contexts/Townhall';
+import FixtureSocket from '@app/mock/Fixture.socket';
 import Component from './TownhallChat';
 
 const emitter = (new EventEmitter() as unknown) as SocketIOClient.Socket;
@@ -23,7 +23,7 @@ function sendMessages(num: number) {
 const Template: Story<{}> = (props) => <Component {...props} />;
 
 export default {
-    title: 'Domains/Townhall/Townhall Chat',
+    title: '@app/domains/Townhall/Townhall Chat',
     decorators: [
         (MyStory) => (
             <UserProvider forceNoLogin value={makeUser()}>

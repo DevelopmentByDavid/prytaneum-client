@@ -9,7 +9,7 @@ import UserList from './UserList';
     PropTypes does rest of checking
 */
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 let container: HTMLDivElement | null = null;
 beforeEach(() => {

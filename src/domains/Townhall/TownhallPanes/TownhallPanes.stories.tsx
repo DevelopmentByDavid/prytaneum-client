@@ -5,9 +5,9 @@ import { EventEmitter } from 'events';
 import { makeQuestion, makeTownhall, makeUser, Townhall, User, makeGenFn, makeSpeaker } from 'prytaneum-typings';
 import faker from 'faker';
 
-import UserProvider from 'contexts/User';
-import FixtureSocket from 'mock/Fixture.socket';
-import TownhallProvider from 'contexts/Townhall';
+import UserProvider from '@app/contexts/User';
+import FixtureSocket from '@app/mock/Fixture.socket';
+import TownhallProvider from '@app/contexts/Townhall';
 import PaneProvider from '../Contexts/Pane';
 import TownhallPanes from './TownhallPanes';
 
@@ -33,7 +33,7 @@ baseTownhall.state.playlist.queue = makeQuestions(10);
 baseTownhall.state.playlist.position.current = 0;
 
 export default {
-    title: 'Domains/Townhall/Townhall Panes',
+    title: '@app/domains/Townhall/Townhall Panes',
     decorators: [
         (MyStory) => (
             <FixtureSocket.Provider value={emitter}>

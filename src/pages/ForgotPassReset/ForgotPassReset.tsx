@@ -2,9 +2,9 @@ import React from 'react';
 import { Grid, Paper } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import FadeThrough from 'animations/FadeThrough';
-import history from 'utils/history';
-import PasswordResetForm from 'domains/Auth/PasswordResetForm';
+import FadeThrough from '@app/animations/FadeThrough';
+import history from '@app/utils/history';
+import PasswordResetForm from '@app/domains/Auth/PasswordResetForm';
 
 const useStyles = makeStyles((theme) => ({
     root: {

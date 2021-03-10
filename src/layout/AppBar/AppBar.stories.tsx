@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 
 import Component from './AppBar';
 
-export default { title: 'layout/AppBar' };
+export default { title: '@app/layout/AppBar' };
 
 export function Basic() {
     return (

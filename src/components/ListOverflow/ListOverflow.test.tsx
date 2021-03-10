@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
-import { makeUsers } from 'mock/handlers/auth';
+import { makeUsers } from '@app/mock/handlers/auth';
 import ListOverflow from './ListOverflow';
 
 const usersPrimary = makeUsers(2).map((user) => {

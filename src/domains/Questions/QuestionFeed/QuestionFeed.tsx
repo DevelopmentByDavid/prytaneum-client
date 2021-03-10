@@ -6,8 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 import type { Question } from 'prytaneum-typings';
 
-import ListFilter, { useFilters, Accessors, ListFilterSkeleton } from 'components/ListFilter';
-import useTownhall from 'hooks/useTownhall';
+import ListFilter, { useFilters, Accessors, ListFilterSkeleton } from '@app/components/ListFilter';
+import useTownhall from '@app/hooks/useTownhall';
 
 import { QuestionCardSkeleton } from '../QuestionCard';
 import FeedList from './FeedList';

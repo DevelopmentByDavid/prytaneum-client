@@ -3,9 +3,9 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from '@reduxjs/toolkit';
 
-import { QueueActions } from 'reducers';
-import useSocketio, { SocketFn } from 'hooks/useSocketio';
-import useTownhall from 'hooks/useTownhall';
+import { QueueActions } from '@app/reducers';
+import useSocketio, { SocketFn } from '@app/hooks/useSocketio';
+import useTownhall from '@app/hooks/useTownhall';
 
 export default function useQuestionQueue() {
     const [townhall] = useTownhall();

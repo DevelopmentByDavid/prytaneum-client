@@ -1,9 +1,9 @@
 import React, { SetStateAction } from 'react';
 import type { ClientSafeUser } from 'prytaneum-typings';
 
-import Loader from 'components/Loader';
-import useEndpoint from 'hooks/useEndpoint';
-import { getMyInfo } from 'domains/Auth/api';
+import Loader from '@app/components/Loader';
+import useEndpoint from '@app/hooks/useEndpoint';
+import { getMyInfo } from '@app/domains/Auth/api';
 
 // NOTE: don't use React.useContext with either of the below,
 // instead use the "useUser" hook found in the hooks folder

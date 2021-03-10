@@ -4,9 +4,9 @@ import { IconButton, Tooltip, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import CopyIcon from '@material-ui/icons/ContentCopy';
 
-import TextField, { Props as TextFieldProps } from 'components/TextField';
+import TextField, { Props as TextFieldProps } from '@app/components/TextField';
 
-import useCopy from 'hooks/useCopy';
+import useCopy from '@app/hooks/useCopy';
 
 const useStyles = makeStyles((theme) => ({
     text: {

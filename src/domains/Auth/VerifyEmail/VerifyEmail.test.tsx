@@ -7,8 +7,8 @@ import { AxiosResponse } from 'axios';
 import VerifyEmail from './VerifyEmail';
 import API from '../api';
 
-jest.mock('hooks/useSnack');
-jest.mock('utils/axios');
+jest.mock('@app/hooks/useSnack');
+jest.mock('@app/utils/axios');
 
 describe('ForgotPassConsume', () => {
     let container: HTMLElement | null = null;

@@ -5,7 +5,7 @@ import { IconButton, Typography, Divider, Grid, Button } from '@material-ui/core
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
-import { incrementQueue, decrementQueue, jumpToCurrent } from 'reducers';
+import { incrementQueue, decrementQueue, jumpToCurrent } from '@app/reducers';
 import usePlaylist from '../usePlaylist';
 import QuestionCard from '../QuestionCard';
 

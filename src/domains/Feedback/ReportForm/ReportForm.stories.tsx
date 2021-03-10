@@ -6,7 +6,7 @@ import BugReportIcon from '@material-ui/icons/BugReport';
 import Component from '.';
 
 export default {
-    title: 'Domains/Feedback/Report Form',
+    title: '@app/domains/Feedback/Report Form',
     component: Component,
     parameters: {
         layout: 'centered',

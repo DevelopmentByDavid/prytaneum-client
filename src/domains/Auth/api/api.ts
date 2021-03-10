@@ -5,8 +5,8 @@ import type {
     ClientSafeUser,
 } from 'prytaneum-typings';
 
-import axios from 'utils/axios';
-import errors from 'utils/errors';
+import axios from '@app/utils/axios';
+import errors from '@app/utils/errors';
 
 /** Function to POST to /api/users/login if email is valid
  *  @category Domains/Auth

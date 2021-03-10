@@ -6,16 +6,16 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import type { RegisterForm as FormType } from 'prytaneum-typings';
 
-import Form from 'components/Form';
-import FormContent from 'components/FormContent';
-import FormActions from 'components/FormActions';
-import TextField from 'components/TextField';
-import useEndpoint from 'hooks/useEndpoint';
-import LoadingButton from 'components/LoadingButton';
-import useSnack from 'hooks/useSnack';
-import useForm from 'hooks/useForm';
-import useQuery from 'hooks/useQuery';
-import useUser from 'hooks/useUser';
+import Form from '@app/components/Form';
+import FormContent from '@app/components/FormContent';
+import FormActions from '@app/components/FormActions';
+import TextField from '@app/components/TextField';
+import useEndpoint from '@app/hooks/useEndpoint';
+import LoadingButton from '@app/components/LoadingButton';
+import useSnack from '@app/hooks/useSnack';
+import useForm from '@app/hooks/useForm';
+import useQuery from '@app/hooks/useQuery';
+import useUser from '@app/hooks/useUser';
 
 import API from '../api';
 

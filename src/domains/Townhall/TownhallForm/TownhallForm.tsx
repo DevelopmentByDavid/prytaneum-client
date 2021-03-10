@@ -10,16 +10,16 @@ import {
 } from '@material-ui/core';
 import type { TownhallForm as FormType } from 'prytaneum-typings';
 
-import { TownhallContext } from 'contexts/Townhall';
-import LoadingButton from 'components/LoadingButton';
-import FormActions from 'components/FormActions';
-import FormContent from 'components/FormContent';
-import FormTitle from 'components/FormTitle';
-import Form from 'components/Form';
-import TextField from 'components/TextField';
-import DateTimePicker from 'components/DateTimePicker';
-import useEndpoint from 'hooks/useEndpoint';
-import useForm from 'hooks/useForm';
+import { TownhallContext } from '@app/contexts/Townhall';
+import LoadingButton from '@app/components/LoadingButton';
+import FormActions from '@app/components/FormActions';
+import FormContent from '@app/components/FormContent';
+import FormTitle from '@app/components/FormTitle';
+import Form from '@app/components/Form';
+import TextField from '@app/components/TextField';
+import DateTimePicker from '@app/components/DateTimePicker';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useForm from '@app/hooks/useForm';
 import { createTownhall, updateTownhall } from '../api';
 
 interface Props {

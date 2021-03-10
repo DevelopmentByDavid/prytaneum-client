@@ -5,7 +5,7 @@ import ReactTestUtils from 'react-dom/test-utils';
 
 import InvalidLink from '.';
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 describe('Handle Invite Link', () => {
     let container: HTMLElement | null = null;

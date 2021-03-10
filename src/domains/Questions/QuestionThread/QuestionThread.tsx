@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { formatDistanceToNow } from 'utils/format';
+import { formatDistanceToNow } from '@app/utils/format';
 import QuestionCard from '../QuestionCard';
 
 interface Props {

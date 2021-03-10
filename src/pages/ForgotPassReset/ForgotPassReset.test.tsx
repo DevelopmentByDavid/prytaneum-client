@@ -1,12 +1,12 @@
 import React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
-import ThemeProvider from 'contexts/Theme';
+import ThemeProvider from '@app/contexts/Theme';
 
 import ForgotPasswordReset from './ForgotPassReset';
 
-jest.mock('hooks/useSnack');
-jest.mock('utils/axios');
+jest.mock('@app/hooks/useSnack');
+jest.mock('@app/utils/axios');
 
 describe('ForgotPassReset', () => {
     let container: HTMLDivElement | null = null;

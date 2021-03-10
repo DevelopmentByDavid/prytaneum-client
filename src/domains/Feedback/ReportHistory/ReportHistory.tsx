@@ -13,10 +13,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import ArrowDownIcon from '@material-ui/icons/ArrowDropDown';
 import Pagination from '@material-ui/lab/Pagination';
 
-import useEndpoint from 'hooks/useEndpoint';
-import Loader from 'components/Loader';
-import LoadingButton from 'components/LoadingButton';
-import ReportList from 'domains/Feedback/ReportList';
+import useEndpoint from '@app/hooks/useEndpoint';
+import Loader from '@app/components/Loader';
+import LoadingButton from '@app/components/LoadingButton';
+import ReportList from '@app/domains/Feedback/ReportList';
 import ReportStateContext from '../Contexts/ReportStateContext';
 import { getFeedbackReportsBySubmitter, getBugReportsBySubmitter } from '../api';
 

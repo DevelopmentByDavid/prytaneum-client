@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react';
 import Component from './UserList';
 
 export default {
-    title: 'Domains/Admin/User List',
+    title: '@app/domains/Admin/User List',
     parameters: {
         layout: 'fullscreen',
     },

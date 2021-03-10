@@ -2,11 +2,11 @@ import React from 'react';
 import { Grid, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import Team from 'components/Team';
-import Loader from 'components/Loader';
-import useEndpoint from 'hooks/useEndpoint';
-import useSnack from 'hooks/useSnack';
-import { Team as TeamType } from 'types';
+import Team from '@app/components/Team';
+import Loader from '@app/components/Loader';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useSnack from '@app/hooks/useSnack';
+import { Team as TeamType } from '@app/types';
 import { getDevTeams } from './api';
 
 const useStyles = makeStyles((theme) => ({

@@ -1,10 +1,10 @@
 import React from 'react';
 
-import UserProvider from 'contexts/User';
-import Layout from 'layout';
+import UserProvider from '@app/contexts/User';
+import Layout from '@app/layout';
 import Component from '.';
 
-export default { title: 'Pages/Login' };
+export default { title: '@app/pages/Login' };
 
 export function Basic() {
     return (

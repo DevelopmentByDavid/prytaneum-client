@@ -3,11 +3,11 @@ import { Story, Meta } from '@storybook/react';
 import { ChatMessage as ChatMessageType, makeChatMessage } from 'prytaneum-typings';
 import { motion } from 'framer-motion';
 
-import ChatMessage from 'components/ChatMessage';
+import ChatMessage from '@app/components/ChatMessage';
 import Chat from './Chat';
 
 export default {
-    title: 'components/Chat',
+    title: '@app/components/Chat',
     argTypes: {
         onSubmit: { action: 'submitted' },
     },

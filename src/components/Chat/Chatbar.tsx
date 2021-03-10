@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import SendIcon from '@material-ui/icons/Send';
 
-import TextField from 'components/TextField';
+import TextField from '@app/components/TextField';
 
 const useStyles = makeStyles((theme) => ({
     btn: {

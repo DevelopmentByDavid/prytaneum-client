@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 
-import useTownhall from 'hooks/useTownhall';
-import useEndpoint from 'hooks/useEndpoint';
+import useTownhall from '@app/hooks/useTownhall';
+import useEndpoint from '@app/hooks/useEndpoint';
 import useQuestionQueue from './useQuestionQueue';
 import QueuePreview from './QueuePreview';
 import { nextQuestion, prevQuestion } from '../api';

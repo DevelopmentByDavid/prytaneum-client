@@ -7,7 +7,7 @@ import faker from 'faker';
 import { makeBugReport } from '../reportMaker.mock';
 import ReportList from './ReportList';
 
-jest.mock('hooks/useSnack');
+jest.mock('@app/hooks/useSnack');
 
 describe('CreateReportList', () => {
     const dummyBugReport = makeBugReport();

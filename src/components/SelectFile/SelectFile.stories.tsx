@@ -5,7 +5,7 @@ import { Meta, Story } from '@storybook/react';
 import Component from './SelectFile';
 
 export default {
-    title: 'Components/Select File',
+    title: '@app/components/Select File',
     component: Component,
     parameters: {
         layout: 'centered',

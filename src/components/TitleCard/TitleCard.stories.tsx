@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Main from 'layout/Main';
+import Main from '@app/layout/Main';
 import Component from './TitleCard';
 
-export default { title: 'components/Title Card' };
+export default { title: '@app/components/Title Card' };
 
 export function Basic() {
     return (

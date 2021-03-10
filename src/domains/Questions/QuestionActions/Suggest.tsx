@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
 
-import LightBulbIcon from 'icons/LightBulb';
-import useEndpoint from 'hooks/useEndpoint';
+import LightBulbIcon from '@app/icons/LightBulb';
+import useEndpoint from '@app/hooks/useEndpoint';
 import { addToPlaylist, deleteFromPlaylist } from '../api';
 
 interface Props {

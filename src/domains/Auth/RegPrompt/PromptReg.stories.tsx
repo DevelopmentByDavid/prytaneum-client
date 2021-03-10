@@ -1,11 +1,11 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import UserProvider from 'contexts/User';
+import UserProvider from '@app/contexts/User';
 import Component from './PromptReg';
 
 export default {
-    title: 'Domains/Auth/Prompt Reg',
+    title: '@app/domains/Auth/Prompt Reg',
     decorators: [
         (Story) => (
             <UserProvider>

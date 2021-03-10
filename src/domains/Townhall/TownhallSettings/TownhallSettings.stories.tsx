@@ -1,12 +1,12 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import UserProvider from 'contexts/User';
-import TownhallProvider from 'contexts/Townhall';
+import UserProvider from '@app/contexts/User';
+import TownhallProvider from '@app/contexts/Townhall';
 import Component from './TownhallSettings';
 
 export default {
-    title: 'Domains/Townhall/Townhall Settings',
+    title: '@app/domains/Townhall/Townhall Settings',
     decorators: [
         (MyStory) => (
             <div style={{ flex: 1, padding: 60 }}>

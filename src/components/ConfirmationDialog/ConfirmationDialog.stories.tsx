@@ -4,7 +4,7 @@ import { Meta } from '@storybook/react';
 import ConfirmationDialog from './ConfirmationDialog';
 
 export default {
-    title: 'Components/Confirmation Dialog',
+    title: '@app/components/Confirmation Dialog',
     parameters: { layout: 'centered' },
     argTypes: { onConfirm: { action: 'confirmed' }, onClose: { action: 'closed' } },
 } as Meta;

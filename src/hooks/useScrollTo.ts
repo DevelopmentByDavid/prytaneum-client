@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useIntersectionObserver from 'hooks/useIntersectionObserver';
+import useIntersectionObserver from '@app/hooks/useIntersectionObserver';
 
 export default function useScrollTo(anchor: React.RefObject<HTMLElement>) {
     const [isAnchorInView, setIsAnchorInView] = React.useState<boolean>(false);

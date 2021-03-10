@@ -3,7 +3,7 @@ import React from 'react';
 import Component from './DevTeam';
 
 export default {
-    title: 'Domains/DevTeam',
+    title: '@app/domains/DevTeam',
     component: Component,
 };
 

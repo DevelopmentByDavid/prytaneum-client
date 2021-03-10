@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import dotenv from 'dotenv';
 
 import smoothscroll from 'smoothscroll-polyfill';
-import { init } from 'utils/storage';
+import { init } from '@app/utils/storage';
 import './index.css';
 import App from './App';
 // import * as serviceWorker from './serviceWorker';
@@ -18,7 +18,7 @@ function startup() {
 }
 
 if (import.meta.env.MODE === 'development' && import.meta.env.SNOWPACK_PUBLIC_MSW === 'true') {
-    import('mock/browser')
+    import('@app/mock/browser')
         .then(({ worker }) => worker.start())
         .then(startup)
         .catch(console.error);
@@ -33,7 +33,7 @@ if (import.meta.env.MODE === 'development' && import.meta.env.SNOWPACK_PUBLIC_MS
     // unregister() to register() below. Note this comes with some pitfalls.
     // Learn more about service workers: https://bit.ly/CRA-PWA
 
-    serviceWorker.unregister();
+    // serviceWorker.unregister();
 
     // serviceWorker.register();
     startup();

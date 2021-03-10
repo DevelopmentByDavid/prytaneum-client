@@ -1,10 +1,10 @@
 import React from 'react';
 
-import UserProvider from 'contexts/User';
-import Layout from 'layout';
+import UserProvider from '@app/contexts/User';
+import Layout from '@app/layout';
 import Component from '.';
 
-export default { title: 'Pages/Townhall List' };
+export default { title: '@app/pages/Townhall List' };
 
 export function Basic() {
     return (

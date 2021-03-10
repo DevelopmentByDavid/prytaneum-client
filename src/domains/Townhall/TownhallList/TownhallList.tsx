@@ -15,10 +15,10 @@ import ChevronRight from '@material-ui/icons/ChevronRight';
 import { makeStyles } from '@material-ui/core/styles';
 import type { Townhall } from 'prytaneum-typings';
 
-import { formatDate } from 'utils/format';
-import useEndpoint from 'hooks/useEndpoint';
-import Loader from 'components/Loader';
-import ListFilter from 'components/ListFilter';
+import { formatDate } from '@app/utils/format';
+import useEndpoint from '@app/hooks/useEndpoint';
+import Loader from '@app/components/Loader';
+import ListFilter from '@app/components/ListFilter';
 import { getTownhallList } from '../api';
 import {
     filters as filterFuncs,

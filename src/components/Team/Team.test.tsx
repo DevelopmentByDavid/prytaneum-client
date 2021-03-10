@@ -3,7 +3,7 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import ReactTestUtils from 'react-dom/test-utils';
 import faker from 'faker';
 
-import { ReferenceNames } from 'types';
+import { ReferenceNames } from '@app/types';
 import Team from './Team';
 
 describe('Team', () => {

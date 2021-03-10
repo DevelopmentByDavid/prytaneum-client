@@ -1,5 +1,5 @@
 import { Routes, Route } from 'universal-router/sync';
-import { Props as LayoutProps } from 'layout';
+import { Props as LayoutProps } from '@app/layout';
 import { ParsedQs } from 'qs';
 
 export interface QueryContext {

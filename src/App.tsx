@@ -5,10 +5,10 @@ import DateFnsUtils from '@date-io/date-fns';
 import { createStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import rootReducer from 'reducers';
-import UserProvider from 'contexts/User';
-import ThemeProvider from 'contexts/Theme';
-import SnackContext from 'contexts/Snack';
+import rootReducer from '@app/reducers';
+import UserProvider from '@app/contexts/User';
+import ThemeProvider from '@app/contexts/Theme';
+import SnackContext from '@app/contexts/Snack';
 import Routes from './routes';
 
 const store = createStore(rootReducer);

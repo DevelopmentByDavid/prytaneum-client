@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button, Typography } from '@material-ui/core';
 
-import Form from 'components/Form';
-import FormContent from 'components/FormContent';
-import FormActions from 'components/FormActions';
-import TextField from 'components/TextField';
-import Loader from 'components/Loader';
-import useEndpoint from 'hooks/useEndpoint';
-import useTownhall from 'hooks/useTownhall';
+import Form from '@app/components/Form';
+import FormContent from '@app/components/FormContent';
+import FormActions from '@app/components/FormActions';
+import TextField from '@app/components/TextField';
+import Loader from '@app/components/Loader';
+import useEndpoint from '@app/hooks/useEndpoint';
+import useTownhall from '@app/hooks/useTownhall';
 import { getAttendees } from '../api';
 
 interface Props {

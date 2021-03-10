@@ -1,5 +1,5 @@
 import React from 'react';
-import FixtureContext from 'mock/Fixture.socket';
+import FixtureContext from '@app/mock/Fixture.socket';
 
 function useSocketio(
     uri: string,

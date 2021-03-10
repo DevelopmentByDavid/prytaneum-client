@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Login from 'pages/Login';
-import useUser from 'hooks/useUser';
+import Login from '@app/pages/Login';
+import useUser from '@app/hooks/useUser';
 
 interface Props {
     children: React.ReactElement;

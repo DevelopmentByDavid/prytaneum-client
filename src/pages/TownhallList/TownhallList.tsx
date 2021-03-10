@@ -4,13 +4,13 @@ import { Grid, DialogContent } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { motion } from 'framer-motion';
 
-import TitleCard from 'components/TitleCard';
-import List from 'domains/Townhall/TownhallList';
-import ResponsiveDialog from 'components/ResponsiveDialog';
-import TownhallForm from 'domains/Townhall/TownhallForm';
-import Fab from 'components/Fab';
-import history, { makeRelativeLink as link } from 'utils/history';
-import FadeThrough from 'animations/FadeThrough';
+import TitleCard from '@app/components/TitleCard';
+import List from '@app/domains/Townhall/TownhallList';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+import TownhallForm from '@app/domains/Townhall/TownhallForm';
+import Fab from '@app/components/Fab';
+import history, { makeRelativeLink as link } from '@app/utils/history';
+import FadeThrough from '@app/animations/FadeThrough';
 
 const useStyles = makeStyles((theme) => ({
     root: {

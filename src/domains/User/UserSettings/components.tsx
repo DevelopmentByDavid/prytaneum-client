@@ -11,12 +11,12 @@ import {
 import type { ClientSafeUser } from 'prytaneum-typings';
 // import { makeStyles } from '@material-ui/core/styles';
 
-import ConfirmationDialog from 'components/ConfirmationDialog';
-import SettingsList from 'components/SettingsList';
+import ConfirmationDialog from '@app/components/ConfirmationDialog';
+import SettingsList from '@app/components/SettingsList';
 
-import TextField from 'components/TextField';
+import TextField from '@app/components/TextField';
 
-import SettingsItem from 'components/SettingsItem';
+import SettingsItem from '@app/components/SettingsItem';
 import text from './help-text';
 
 /* DEPTH = 3 CURRYING HERE, 

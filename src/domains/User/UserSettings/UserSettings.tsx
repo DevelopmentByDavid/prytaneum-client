@@ -6,12 +6,12 @@ import {
 } from '@material-ui/core';
 // import { makeStyles } from '@material-ui/core/styles';
 
-import ResponsiveDialog from 'components/ResponsiveDialog';
-// import AppBar from 'layout/AppBar';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
+// import AppBar from '@app/layout/AppBar';
 
-import SettingsMenu from 'components/SettingsMenu/SettingsMenu';
-import useUser from 'hooks/useUser';
-import Redirect from 'domains/Logical/Redirect';
+import SettingsMenu from '@app/components/SettingsMenu/SettingsMenu';
+import useUser from '@app/hooks/useUser';
+import Redirect from '@app/domains/Logical/Redirect';
 import UserProfile from '../UserProfile';
 
 import {

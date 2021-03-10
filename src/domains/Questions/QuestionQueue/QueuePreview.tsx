@@ -6,8 +6,8 @@ import SkipNextIcon from '@material-ui/icons/SkipNext';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import type { Question } from 'prytaneum-typings';
 
-import CommentArrowLeft from 'icons/CommentArrowLeft';
-import ResponsiveDialog from 'components/ResponsiveDialog';
+import CommentArrowLeft from '@app/icons/CommentArrowLeft';
+import ResponsiveDialog from '@app/components/ResponsiveDialog';
 import QuestionCard from '../QuestionCard';
 import DndQuestions from './DndQuestions';
 
