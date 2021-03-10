@@ -33,7 +33,7 @@ if (import.meta.env.MODE === 'development' && import.meta.env.SNOWPACK_PUBLIC_MS
     // unregister() to register() below. Note this comes with some pitfalls.
     // Learn more about service workers: https://bit.ly/CRA-PWA
 
-    // serviceWorker.unregister();
+    serviceWorker.unregister();
 
     // serviceWorker.register();
     startup();
